@@ -1,0 +1,15 @@
+
+.footer {
+	width: 100%;
+	text-align: center;
+	padding: 1rem 0rem;
+	margin-top: 3rem;
+	background: $main-light;
+	background: linear-gradient($background 0%, $main-light 50%);
+
+	& p {
+		color: $main-dark;
+		padding: 1rem 0;
+		margin-bottom: 0;
+	}
+}

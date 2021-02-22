@@ -6,11 +6,10 @@
 
 module.exports = {
 	siteMetadata: {
-		title: 'Full-stack-bootcamp',
+		title: 'personal-site',
 		author: 'Jacobo Jaramillo',
 	},
 	plugins: [
-		`gatsby-plugin-sass`,
 		`gatsby-plugin-sharp`,
 		{
 			resolve: `gatsby-plugin-google-fonts`,

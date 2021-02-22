@@ -1,4 +1,13 @@
 const path = require('path');
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      plugins: [new TsconfigPathsPlugin()],
+    },
+  })
+}
 
 module.exports.onCreateNode = ({node, actions: {createNodeField}}) => {
 	// only take the "blogs" files

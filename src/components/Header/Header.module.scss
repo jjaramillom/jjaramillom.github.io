@@ -1,0 +1,18 @@
+@import '/src/styles/_colors';
+
+.nav {
+	width: 100%;
+	padding: 0.5rem 2rem 1rem 2rem;
+	background: $main-light;
+	background: linear-gradient($main-light 50%, $background 100%);
+}
+
+.nav_item {
+	color: $main-med;
+	&:hover {
+		color: $main-dark;
+	}
+	&:active {
+		color: $main-orange;
+	}
+}

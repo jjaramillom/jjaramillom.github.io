@@ -1,3 +1,4 @@
+@import '/src/styles/_colors';
 
 .footer {
 	width: 100%;
@@ -8,7 +9,7 @@
 	background: linear-gradient($background 0%, $main-light 50%);
 
 	& p {
-		color: $main-dark;
+		color: $main-med;
 		padding: 1rem 0;
 		margin-bottom: 0;
 	}

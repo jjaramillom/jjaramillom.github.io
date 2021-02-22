@@ -1,41 +1,41 @@
 import React, {useState} from 'react';
 import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
 import {Link} from 'gatsby';
 
 import classes from './Header.module.scss';
 
-console.log(classes);
+type Props = {
+	currentRoute: string;
+};
 
-const DEFAULT_ROUTE = '/';
-
-const Header = () => {
-	const [currentRoute, setCurrentRoute] = useState<string>(DEFAULT_ROUTE);
+const Header = ({currentRoute}: Props) => {
+	console.log(currentRoute);
+	const routes = [
+		{to: '/', label: 'home'},
+		{to: '/projects', label: 'projects'},
+		{to: '/resume', label: 'resume'},
+		{to: '/blog', label: 'blog'},
+	];
 
 	return (
-		<Nav
-			className={classes.nav}
-			activeKey={currentRoute}
-			onSelect={selectedKey => setCurrentRoute(selectedKey as string)}
-		>
-			<Nav.Link className={classes.nav_item} to="/" as={Link}>
-				Home
-			</Nav.Link>
-			<Nav.Item>
-				<Nav.Link className={classes.nav_item} to="/resume" as={Link}>
-					Link
-				</Nav.Link>
-			</Nav.Item>
-			<Nav.Item>
-				<Nav.Link className={classes.nav_item} to="/projects" as={Link}>
-					Project
-				</Nav.Link>
-			</Nav.Item>
-			<Nav.Item>
-				<Nav.Link className={classes.nav_item} to="/blog" as={Link}>
-					Blog
-				</Nav.Link>
-			</Nav.Item>
-		</Nav>
+		<Navbar className={classes.nav_bar} collapseOnSelect expand="md">
+			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
+			<Navbar.Collapse id="responsive-navbar-nav">
+				<Nav className={classes.nav} activeKey={currentRoute}>
+					{routes.map(({to, label}) => (
+						<Nav.Link
+							key={to}
+							className={`${classes.nav_item} ${to === currentRoute ? classes.active : ''}`}
+							to={to}
+							as={Link}
+						>
+							{label}
+						</Nav.Link>
+					))}
+				</Nav>
+			</Navbar.Collapse>
+		</Navbar>
 	);
 };
 

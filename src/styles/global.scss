@@ -9,6 +9,12 @@ html {
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
+body {
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: $gray-200;
+}
 article,
 aside,
 details,
@@ -209,12 +215,6 @@ body {
 	-ms-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 	-webkit-font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 	font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-	/* custom */
-	color: $main-dark;
-	margin: 0;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	background: $background;
 }
 img {
 	max-width: 100%;

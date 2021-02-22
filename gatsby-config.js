@@ -5,6 +5,54 @@
  */
 
 module.exports = {
-  /* Your site config here */
-  plugins: [],
-}
+	siteMetadata: {
+		title: 'Full-stack-bootcamp',
+		author: 'Jacobo Jaramillo',
+	},
+	plugins: [
+		`gatsby-plugin-sass`,
+		`gatsby-plugin-sharp`,
+		{
+			resolve: `gatsby-plugin-google-fonts`,
+			options: {
+				fonts: [`poppins:300,400,500,600,700`],
+				display: 'swap',
+			},
+		},
+		{
+			resolve: `gatsby-transformer-remark`,
+			options: {
+				plugins: [
+					`gatsby-remark-relative-images`,
+					{
+						resolve: `gatsby-remark-images`,
+						options: {
+							maxWidth: 750,
+							linkImagesToOriginal: false,
+						},
+					},
+				],
+			},
+		},
+		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				name: 'src',
+				path: `${__dirname}/src/`,
+				ignore: [`**/__generated__`],
+			},
+		},
+		{
+			resolve: `gatsby-plugin-typegen`,
+			options: {
+				outputPath: `src/__generated__/gatsby-types.d.ts`,
+				emitSchema: {
+					'src/__generated__/gatsby-introspection.json': true,
+				},
+				emitPluginDocuments: {
+					'src/__generated__/gatsby-plugin-documents.graphql': true,
+				},
+			},
+		},
+	],
+};

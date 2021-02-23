@@ -1,9 +1,5 @@
 @import './_colors';
 
-* {
-	font-family: poppins;
-}
-
 html {
 	font-family: sans-serif;
 	-ms-text-size-adjust: 100%;
@@ -626,4 +622,43 @@ pre tt:after {
 	html {
 		font-size: 100%;
 	}
+}
+
+/* ----------------------------------------------------------------------- */
+
+/* CUSTOM */
+
+* {
+	font-family: poppins;
+	color: $main-med;
+}
+
+/* Scrollbar */
+$scrollbarActive: $gray-400;
+$scrollbarInactive: $gray-600;
+$radius: 10px;
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 0 1px rgba(0, 0, 0, 0.3);
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+	background: $scrollbarActive;
+	-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+	box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: $scrollbarInactive;
 }

@@ -7,7 +7,10 @@
 module.exports = {
 	siteMetadata: {
 		title: 'personal-site',
-		author: 'Jacobo Jaramillo',
+		author: {
+			name:'Jacobo',
+			lastName: 'Jaramillo'
+		},
 	},
 	plugins: [
 		`gatsby-plugin-sharp`,

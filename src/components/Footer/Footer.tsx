@@ -4,10 +4,13 @@ import {graphql, useStaticQuery} from 'gatsby';
 import classes from './Footer.module.scss';
 
 const Footer = () => {
-	const data = useStaticQuery<GatsbyTypes.Query>(query);
+	const metaData = useStaticQuery<GatsbyTypes.Query>(query).site?.siteMetadata;
 	return (
 		<footer className={classes.footer}>
-			<p>Created by {data.site?.siteMetadata?.author}, 2019</p>
+			<span className="m-auto">
+				<b>{`${metaData?.author?.name} ${metaData?.author?.lastName}`}</b> &copy; {new Date().getFullYear()}. Made with
+				<span className={classes.heart}>&nbsp;❤&nbsp;</span> & &nbsp;<a href="https://www.gatsbyjs.org/">Gatsby</a>
+			</span>
 		</footer>
 	);
 };
@@ -18,7 +21,10 @@ const query = graphql`
 	query {
 		site {
 			siteMetadata {
-				author
+				author{
+					name
+					lastName
+				}
 			}
 		}
 	}

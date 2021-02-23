@@ -1,8 +1,6 @@
 @import '/src/styles/_colors';
 
 .nav_bar {
-	background: $main-light;
-	background: linear-gradient($main-light 50%, $background 100%);
 	height: 90px;
 }
 
@@ -10,9 +8,12 @@
 	width: 100%;
 	padding: 0.5rem 2rem 1rem 2rem;
 }
+.nav_collapse {
+	background: rgba($main-background, 0.8);
+}
 
 .nav_item {
-	color: $main-med!important;
+	color: $main-med !important;
 	text-transform: capitalize;
 	&:hover {
 		color: $main-med;
@@ -21,9 +22,9 @@
 }
 
 .active {
-	color: $main-orange!important;
+	color: $main-orange !important;
 	&:hover {
 		color: $main-orange;
-		font-weight: bold!important;
+		font-weight: bold !important;
 	}
 }

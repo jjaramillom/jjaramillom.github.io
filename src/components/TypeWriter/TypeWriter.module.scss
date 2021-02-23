@@ -1,0 +1,42 @@
+@import '/src/styles/_colors';
+
+.typewriter {
+	width: fit-content;
+	margin: auto;
+	white-space: break-spaces;
+	& p {
+		overflow: hidden;
+		white-space: nowrap;
+		margin: 0 auto;
+		letter-spacing: 0.1em;
+	}
+
+	&.active p {
+		border-right: 0.15em solid $main-orange;
+		&.wide {
+			animation: typing 4s steps(40, end), blink-caret 1s step-end infinite;
+		}
+		&.narrow {
+			animation: typing 2s steps(40, end), blink-caret 1s step-end infinite;
+		}
+	}
+}
+
+@keyframes typing {
+	from {
+		width: 0;
+	}
+	to {
+		width: 100%;
+	}
+}
+
+@keyframes blink-caret {
+	from,
+	to {
+		border-color: transparent;
+	}
+	50% {
+		border-color: $main-orange;
+	}
+}

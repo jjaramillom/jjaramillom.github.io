@@ -4,13 +4,13 @@
 	width: 100%;
 	text-align: center;
 	padding: 1rem 0rem;
-	margin-top: 3rem;
-	background: $main-light;
-	background: linear-gradient($background 0%, $main-light 50%);
-
-	& p {
-		color: $main-med;
-		padding: 1rem 0;
-		margin-bottom: 0;
+	margin-top: 2rem;
+	& a {
+		color: $main-orange;
+		font-weight: bold;
 	}
+}
+
+.heart {
+	color: $main-orange;
 }

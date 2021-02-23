@@ -1,0 +1,10 @@
+@import '/src/styles/_colors';
+
+.name_title {
+	font-size: 3rem;
+	text-align: center;
+  font-weight: normal;
+	& span:last-child {
+		color: $main-orange;
+	}
+}

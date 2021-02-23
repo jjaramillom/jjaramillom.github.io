@@ -19,10 +19,10 @@ const Header = ({currentRoute}: Props) => {
 	];
 
 	return (
-		<Navbar className={classes.nav_bar} collapseOnSelect expand="md">
+		<Navbar className={classes.nav_bar} collapseOnSelect expand="sm">
 			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
-			<Navbar.Collapse id="responsive-navbar-nav">
-				<Nav className={classes.nav} activeKey={currentRoute}>
+			<Navbar.Collapse className={classes.nav_collapse} id="responsive-navbar-nav">
+				<Nav className={`mr-auto ${classes.nav}`} activeKey={currentRoute}>
 					{routes.map(({to, label}) => (
 						<Nav.Link
 							key={to}

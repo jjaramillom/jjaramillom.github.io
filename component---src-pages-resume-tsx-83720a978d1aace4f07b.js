@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{UTyF:function(e,n,t){"use strict";t.r(n);var a=t("q1tI"),r=t.n(a),u=t("4XLq");n.default=function(e){var n=e.uri;return r.a.createElement(u.a,{uri:n},r.a.createElement("h1",null,"Resume"))}}}]);
+//# sourceMappingURL=component---src-pages-resume-tsx-83720a978d1aace4f07b.js.map

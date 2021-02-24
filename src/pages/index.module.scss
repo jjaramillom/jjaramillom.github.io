@@ -3,8 +3,56 @@
 .name_title {
 	font-size: 3rem;
 	text-align: center;
-  font-weight: normal;
+	font-weight: normal;
+	& span:first-child {
+		font-weight: 500;
+	}
 	& span:last-child {
 		color: $main-orange;
+	}
+}
+
+.icon_wrapper {
+	margin: 0 1rem;
+}
+
+.tooltip {
+	color: $main-orange;
+	&.github {
+		color: $black;
+	}
+	&.linkedin {
+		color: #0077b5;
+	}
+}
+
+.icon {
+	font-size: 3.75rem;
+	color: $main-med;
+
+	&.animated {
+		animation: float 2s ease-in-out infinite;
+	}
+	overflow: hidden;
+	&:hover {
+		color: $main-orange;
+		&.github {
+			color: $black;
+		}
+		&.linkedin {
+			color: #0077b5;
+		}
+	}
+}
+
+@keyframes float {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
 	}
 }

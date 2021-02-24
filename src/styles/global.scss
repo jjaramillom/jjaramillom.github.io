@@ -630,7 +630,9 @@ pre tt:after {
 
 * {
 	font-family: poppins;
-	color: $main-med;
+	&:not(path) {
+		color: $main-med;
+	}
 }
 
 /* Scrollbar */

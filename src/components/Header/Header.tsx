@@ -13,13 +13,14 @@ const Header = ({currentRoute}: Props) => {
 	console.log(currentRoute);
 	const routes = [
 		{to: '/', label: 'home'},
+		{to: '/about', label: 'about'},
 		{to: '/projects', label: 'projects'},
 		{to: '/resume', label: 'resume'},
 		{to: '/blog', label: 'blog'},
 	];
 
 	return (
-		<Navbar collapseOnSelect expand="sm">
+		<Navbar collapseOnSelect sticky="top" expand="sm" className={classes.navbar}>
 			<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 			<Navbar.Collapse className={classes.nav_collapse} id="responsive-navbar-nav">
 				<Nav className={`mr-auto ${classes.nav}`} activeKey={currentRoute}>

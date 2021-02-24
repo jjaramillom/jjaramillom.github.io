@@ -1,0 +1,32 @@
+@import '/src/styles/_colors';
+
+.image {
+	height: auto;
+	width: 220px;
+	border: $main-orange solid 4px;
+}
+
+span.pipe {
+	color: $main-dark;
+}
+
+.designations {
+	text-align: center;
+	font-size: 1.1rem;
+	& div {
+		display: inline-block;
+		white-space: nowrap;
+	}
+}
+
+.link {
+	color: $main-orange;
+}
+
+.book_list {
+	font-size: 0.9rem;
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

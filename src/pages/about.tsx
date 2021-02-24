@@ -25,17 +25,11 @@ const mapMovieToElement = ({link, title, year}: GatsbyTypes.SiteSiteMetadataMovi
 );
 
 const BlogPage = ({uri}: PageProps) => {
-	const {author, designations} = useStaticQuery<GatsbyTypes.Query>(query).site
+	const {author, designations, moviesList, booksList} = useStaticQuery<GatsbyTypes.Query>(query).site
 		?.siteMetadata as GatsbyTypes.SiteSiteMetadata;
 
-	let movieElements;
-	let bookElements;
-	const siteMetadata = useStaticQuery<GatsbyTypes.Query>(query).site?.siteMetadata;
-
-	if (siteMetadata) {
-		movieElements = siteMetadata.moviesList?.map(m => mapMovieToElement(m as GatsbyTypes.SiteSiteMetadataMoviesList));
-		bookElements = siteMetadata.booksList?.map(m => mapBookToElement(m as GatsbyTypes.SiteSiteMetadataBooksList));
-	}
+	const movieElements = moviesList?.map(m => mapMovieToElement(m as GatsbyTypes.SiteSiteMetadataMoviesList));
+	const bookElements = booksList?.map(b => mapBookToElement(b as GatsbyTypes.SiteSiteMetadataBooksList));
 
 	return (
 		<Layout uri={uri}>

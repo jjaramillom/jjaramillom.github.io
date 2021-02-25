@@ -1,0 +1,30 @@
+@import '/src/styles/_colors';
+
+.container {
+  padding: 30px 35px;
+  height: 350px;
+}
+
+.image {
+	margin: auto;
+	border-radius: 10px;
+	height: 200px;
+	width: 150px;
+	&.wide {
+		width: 190px;
+	}
+}
+
+.text_container {
+	text-align: center;
+}
+
+.university {
+	font-weight: bold;
+	color: $main-dark;
+}
+
+.title {
+	font-weight: bold;
+	color: $main-dark;
+}

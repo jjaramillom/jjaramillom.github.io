@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
 
-import Header from 'components/Header/Header';
+import Header from '@components/Navbar/Navbar';
 import classes from './Layout.module.scss';
 import Footer from 'components/Footer/Footer';
 type Props = {uri: string; style?: React.CSSProperties};

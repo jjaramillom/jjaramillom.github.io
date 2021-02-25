@@ -32,7 +32,7 @@ const DEFAULT_ICONS: IconConfig[] = [
 		animationActive: false,
 	},
 	{icon: faEnvelopeSquare, label: 'Send me an email', link: 'mailto:jjaramillom@unal.edu.co', animationActive: false},
-	{icon: faIdCard, label: 'Download my CV', link: '', animationActive: false}, // ../../resume.pdf
+	{icon: faIdCard, label: 'Download my CV', link: '/static/resume.pdf', animationActive: false}, // ../../resume.pdf
 ];
 
 const IndexPage = ({uri}: PageProps) => {
@@ -67,7 +67,13 @@ const IndexPage = ({uri}: PageProps) => {
 							overlay={<div className={`mt-3 ${classes.tooltip}`} id={link}>{`${label}`}</div>}
 							key={link}
 						>
-							<a href={link} className={classes.icon_wrapper} target="_blank" rel="noopener noreferrer">
+							<a
+								href={link}
+								className={classes.icon_wrapper}
+								target="_blank"
+								rel="noopener noreferrer"
+								download={link === '/static/resume.pdf'}
+							>
 								<FontAwesomeIcon
 									aria-hidden
 									className={`${classes.icon} ${animationActive ? classes.animated : ''}`}

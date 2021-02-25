@@ -3,20 +3,19 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {Link} from 'gatsby';
 
-import classes from './Header.module.scss';
+import classes from './Navbar.module.scss';
 
 type Props = {
 	currentRoute: string;
 };
 
 const Header = ({currentRoute}: Props) => {
-	console.log(currentRoute);
 	const routes = [
 		{to: '/', label: 'home'},
 		{to: '/about', label: 'about'},
-		{to: '/projects', label: 'projects'},
 		{to: '/resume', label: 'resume'},
-		{to: '/blog', label: 'blog'},
+		// {to: '/projects', label: 'projects'},
+		// {to: '/blog', label: 'blog'},
 	];
 
 	return (

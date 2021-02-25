@@ -43,6 +43,7 @@ template {
 	display: none;
 }
 a {
+	color: $main-orange;
 	background-color: transparent;
 	-webkit-text-decoration-skip: objects;
 }
@@ -630,7 +631,7 @@ pre tt:after {
 
 * {
 	font-family: poppins;
-	&:not(path) {
+	&:not(path):not(a) {
 		color: $main-med;
 	}
 }

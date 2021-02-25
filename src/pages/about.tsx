@@ -8,7 +8,7 @@ import classes from './about.module.scss';
 
 const mapBookToElement = ({author, link, title}: GatsbyTypes.SiteSiteMetadataBooksList) => (
 	<li key={title}>
-		<a className={classes.link} target="_blank" rel="noopener noreferrer" href={link}>
+		<a target="_blank" rel="noopener noreferrer" href={link}>
 			{title}
 		</a>
 		&nbsp;-<i>{author}</i>
@@ -39,7 +39,11 @@ const BlogPage = ({uri}: PageProps) => {
 					<div className={classes.designations}>
 						{designations?.map((d, i) => (
 							<div key={d}>
-								&nbsp;<span>{d}</span>&nbsp;
+								&nbsp;
+								<span>
+									<b>{d}</b>
+								</span>
+								&nbsp;
 								{i < designations.length - 1 ? <span className={classes.pipe}>|</span> : null}
 							</div>
 						))}
@@ -52,11 +56,8 @@ const BlogPage = ({uri}: PageProps) => {
 						learn and open to get involved in different areas.
 					</p>
 					<p className="">
-						In my leisure time, I'm usually riding my bike, chilling with friends (before Corona
-						<span aria-label="sad emoji" role="img">
-							😢
-						</span>
-						), playing some video-games, and of course, hitting the keyboard.
+						In my leisure time, I'm usually riding my bike, chilling with friends (before Corona), playing some
+						video-games, and of course, hitting the keyboard.
 					</p>
 				</article>
 				<article className="w-100 m-auto">
@@ -66,9 +67,9 @@ const BlogPage = ({uri}: PageProps) => {
 						extra information about me.
 					</p>
 					<p className="text-justify font-weight-bolder mb-3">Some of my favorite books:</p>
-					<ul className={classes.book_list}>{bookElements}</ul>
+					<ul className={classes.list}>{bookElements}</ul>
 					<p className="text-justify font-weight-bolder mb-3">Some of my favorite movies:</p>
-					<ul className={classes.book_list}>{movieElements}</ul>
+					<ul className={classes.list}>{movieElements}</ul>
 				</article>
 			</Container>
 		</Layout>

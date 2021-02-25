@@ -19,11 +19,8 @@ span.pipe {
 	}
 }
 
-.link {
-	color: $main-orange;
-}
-
-.book_list {
+ul.list {
+	margin-bottom: 1rem;
 	font-size: 0.9rem;
 	list-style: none;
 	display: flex;

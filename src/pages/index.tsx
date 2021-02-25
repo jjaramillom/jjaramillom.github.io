@@ -15,7 +15,7 @@ type IconConfig = {
 	icon: IconDefinition;
 	link: string;
 	label: string;
-	cssClasses: string[];
+	animationActive: boolean;
 };
 
 const DEFAULT_ICONS: IconConfig[] = [
@@ -23,16 +23,16 @@ const DEFAULT_ICONS: IconConfig[] = [
 		icon: faGithubSquare,
 		label: 'Github',
 		link: 'https://www.github.com/jjaramillom',
-		cssClasses: [classes.github],
+		animationActive: false,
 	},
 	{
 		icon: faLinkedin,
 		label: 'LinkedIn',
 		link: 'https://www.linkedin.com/in/jjaramillom',
-		cssClasses: [classes.linkedin],
+		animationActive: false,
 	},
-	{icon: faEnvelopeSquare, label: 'Send me an email', link: 'mailto:jjaramillom@unal.edu.co', cssClasses: ['']},
-	{icon: faIdCard, label: 'Download my CV', link: '', cssClasses: ['']}, // ../../resume.pdf
+	{icon: faEnvelopeSquare, label: 'Send me an email', link: 'mailto:jjaramillom@unal.edu.co', animationActive: false},
+	{icon: faIdCard, label: 'Download my CV', link: '', animationActive: false}, // ../../resume.pdf
 ];
 
 const IndexPage = ({uri}: PageProps) => {
@@ -45,7 +45,7 @@ const IndexPage = ({uri}: PageProps) => {
 			setTimeout(() => {
 				setIcons(icons => {
 					const iconsCopy = cloneDeep(icons);
-					iconsCopy[i].cssClasses = [...icons[i].cssClasses, classes.animated];
+					iconsCopy[i].animationActive = true;
 					return iconsCopy;
 				});
 			}, i * 200);
@@ -61,14 +61,18 @@ const IndexPage = ({uri}: PageProps) => {
 				<Typewriter />
 				<hr className="my-3 w-100" />
 				<div className="d-flex flex-row justify-content-center mt-5">
-					{icons.map(({icon, link, cssClasses, label}) => (
+					{icons.map(({icon, link, animationActive, label}) => (
 						<OverlayTrigger
 							placement="bottom"
-							overlay={<div className={`mt-3 ${classes.tooltip} ${cssClasses?.join(' ')}`} id={link}>{`${label}`}</div>}
+							overlay={<div className={`mt-3 ${classes.tooltip}`} id={link}>{`${label}`}</div>}
 							key={link}
 						>
 							<a href={link} className={classes.icon_wrapper} target="_blank" rel="noopener noreferrer">
-								<FontAwesomeIcon aria-hidden className={`${classes.icon} ${cssClasses?.join(' ')}`} icon={icon} />
+								<FontAwesomeIcon
+									aria-hidden
+									className={`${classes.icon} ${animationActive ? classes.animated : ''}`}
+									icon={icon}
+								/>
 							</a>
 						</OverlayTrigger>
 					))}

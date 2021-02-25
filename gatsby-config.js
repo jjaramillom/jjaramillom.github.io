@@ -5,14 +5,14 @@
  */
 
 module.exports = {
-  pathPrefix: "/jjaramillom.github.io",
+	pathPrefix: '/jjaramillom.github.io',
 	siteMetadata: {
 		title: 'personal-site',
 		author: {
 			name: 'Jacobo',
 			lastName: 'Jaramillo',
 		},
-		designations: ['TypeScript lover', 'Your fullstack guy 🙃', 'Gamer', 'Tennis player'],
+		designations: ['TypeScript lover', 'Your fullstack guy', 'Avid learner', 'Gamer', 'Tennis player'],
 		booksList: [
 			{
 				title: `Genghis Khan and the Making of the Modern World`,
@@ -31,9 +31,13 @@ module.exports = {
 			},
 		],
 		moviesList: [
-			{title: 'Interstellar', year:2014, link: 'https://www.imdb.com/title/tt0816692/?ref_=nv_sr_srsg_0'},
-			{title: 'Incendies', year:2010, link: 'https://www.imdb.com/title/tt1255953/?ref_=rt_li_tt'},
-			{title: 'Eternal Sunshine of the Spotless Mind', year:2004, link: 'https://www.imdb.com/title/tt0338013/?ref_=rt_li_tt'},
+			{title: 'Interstellar', year: 2014, link: 'https://www.imdb.com/title/tt0816692/?ref_=nv_sr_srsg_0'},
+			{title: 'Incendies', year: 2010, link: 'https://www.imdb.com/title/tt1255953/?ref_=rt_li_tt'},
+			{
+				title: 'Eternal Sunshine of the Spotless Mind',
+				year: 2004,
+				link: 'https://www.imdb.com/title/tt0338013/?ref_=rt_li_tt',
+			},
 		],
 	},
 	plugins: [

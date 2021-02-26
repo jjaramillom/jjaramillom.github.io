@@ -17,7 +17,7 @@
 	position: relative;
 	display: flex;
 	align-items: center;
-	& a:hover .tooltip {
+	&:hover .tooltip {
 		display: block;
 	}
 }
@@ -28,32 +28,19 @@
 	white-space: nowrap;
 	position: absolute;
 	left: 50%;
-	bottom: -50px;
+	bottom: -30px;
 	transform: translateX(-50%);
 }
 
-a.animated {
-	animation: float 2s ease-in-out infinite;
-}
-
 .icon {
+	position: relative;
+	top: 0;
 	font-size: 3.75rem;
+	transition: top 0.5s;
 	color: $main-med;
-
 	overflow: hidden;
 	&:hover {
 		color: $main-orange;
-	}
-}
-
-@keyframes float {
-	0% {
-		transform: translatey(0px);
-	}
-	50% {
-		transform: translatey(-20px);
-	}
-	100% {
-		transform: translatey(0px);
+		top: -10px;
 	}
 }

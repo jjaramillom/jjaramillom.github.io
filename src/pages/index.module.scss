@@ -14,19 +14,32 @@
 
 .icon_wrapper {
 	margin: 0 1rem;
+	position: relative;
+	display: flex;
+	align-items: center;
+	& a:hover .tooltip {
+		display: block;
+	}
 }
 
 .tooltip {
+	display: none;
 	color: $main-orange;
+	white-space: nowrap;
+	position: absolute;
+	left: 50%;
+	bottom: -50px;
+	transform: translateX(-50%);
+}
+
+a.animated {
+	animation: float 2s ease-in-out infinite;
 }
 
 .icon {
 	font-size: 3.75rem;
 	color: $main-med;
 
-	&.animated {
-		animation: float 2s ease-in-out infinite;
-	}
 	overflow: hidden;
 	&:hover {
 		color: $main-orange;

@@ -66,9 +66,9 @@ const BlogPage = ({uri}: PageProps) => {
 						I truly think you don't only hire a developer, but a human being. So in case you're interested, here's some
 						extra information about me.
 					</p>
-					<p className="text-justify font-weight-bolder mb-3">Some of my favorite books:</p>
+					<p className="text-center font-weight-bolder mb-3">Some of my favorite books</p>
 					<ul className={classes.list}>{bookElements}</ul>
-					<p className="text-justify font-weight-bolder mb-3">Some of my favorite movies:</p>
+					<p className="text-center font-weight-bolder mb-3">Some of my favorite movies</p>
 					<ul className={classes.list}>{movieElements}</ul>
 				</article>
 			</Container>

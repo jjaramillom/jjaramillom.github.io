@@ -62,25 +62,18 @@ const IndexPage = ({uri}: PageProps) => {
 				<hr className="my-3 w-100" />
 				<div className="d-flex flex-row justify-content-center mt-5">
 					{icons.map(({icon, link, animationActive, label}) => (
-						<OverlayTrigger
-							placement="bottom"
-							overlay={<div className={`mt-3 ${classes.tooltip}`} id={link}>{`${label}`}</div>}
-							key={link}
-						>
+						<div className={`${classes.icon_wrapper}`}>
 							<a
 								href={link}
-								className={classes.icon_wrapper}
+								className={animationActive ? classes.animated : ''}
 								target="_blank"
 								rel="noopener noreferrer"
 								download={link === '/static/resume.pdf'}
 							>
-								<FontAwesomeIcon
-									aria-hidden
-									className={`${classes.icon} ${animationActive ? classes.animated : ''}`}
-									icon={icon}
-								/>
+								<FontAwesomeIcon aria-hidden className={`${classes.icon} `} icon={icon} />
+								<div className={`mt-3 ${classes.tooltip}`} id={link}>{`${label}`}</div>
 							</a>
-						</OverlayTrigger>
+						</div>
 					))}
 				</div>
 			</Container>

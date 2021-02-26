@@ -46,6 +46,10 @@ a {
 	color: $main-orange;
 	background-color: transparent;
 	-webkit-text-decoration-skip: objects;
+	&:hover{
+	color: $main-orange;
+	font-weight: 500;
+	}
 }
 a:active,
 a:hover {

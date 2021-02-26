@@ -32,17 +32,16 @@ const ResumePage = ({uri, data}: PageProps) => {
 	return (
 		<Layout uri={uri}>
 			<Container
-				className="mt-5 mb-5 pt-3 d-flex flex-column flex-md-row justify-content-center align-items-center"
+				className="mt-5 mb-5 pt-3 d-flex flex-column flex-lg-row justify-content-center align-items-center"
 				fluid
 			>
 				{educationData.edges.map(({node}) => (
-					<div key={node.id}>
-						<EducationCard
-							education={mapEducationData(node.frontmatter as GatsbyTypes.MarkdownRemarkFrontmatter)}
-							image={educationImageMap[node?.fields?.slug ?? '']}
-							wide={node?.frontmatter?.location?.includes('Darmstadt') ?? false}
-						/>
-					</div>
+					<EducationCard
+						key={node.id}
+						education={mapEducationData(node.frontmatter as GatsbyTypes.MarkdownRemarkFrontmatter)}
+						image={educationImageMap[node?.fields?.slug ?? '']}
+						wide={node?.frontmatter?.location?.includes('Darmstadt') ?? false}
+					/>
 				))}
 			</Container>
 		</Layout>

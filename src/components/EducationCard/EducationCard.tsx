@@ -1,6 +1,6 @@
 import React from 'react';
 import Img, {FluidObject} from 'gatsby-image';
-import {Container} from 'react-bootstrap';
+import Container from 'react-bootstrap/Container';
 
 import Card from 'components/Card/Card';
 import classes from './EducationCard.module.scss';
@@ -36,7 +36,7 @@ const EducationCard = ({education: {endDate, startDate, location, title, univers
 					<h5 className="mb-3">{location}</h5>
 					<h4 className={`${classes.title} mb-1`}>{title}</h4>
 					<h5 className="mb-0">
-						{startDate}-{Number(endDate[0]) > 2030 ? 'Present' : endDate}
+						{startDate}-{endDate}
 					</h5>
 				</div>
 			</Container>

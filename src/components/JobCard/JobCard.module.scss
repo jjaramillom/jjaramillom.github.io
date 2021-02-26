@@ -2,11 +2,8 @@
 
 .image {
 	margin: auto;
-	height: 200px;
-	width: 150px;
-	&.wide {
-		width: 190px;
-	}
+	max-width: 15vmax;
+	max-height: 15vmax;
 }
 
 .text_container {
@@ -21,4 +18,8 @@
 .title {
 	font-weight: bold;
 	color: $main-dark;
+}
+
+.badge {
+	background: $main-background;
 }

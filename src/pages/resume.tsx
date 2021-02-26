@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import {Utils} from 'utils';
 import Layout from 'components/Layout/Layout';
 import EducationCard, {Education} from 'components/EducationCard/EducationCard';
+import JobCard, {Job} from '@components/JobCard/JobCard';
 import classes from './resume.module.scss';
 
 const mapEducationData = ({
@@ -21,6 +22,20 @@ const mapEducationData = ({
 	endDate: endDate ?? '',
 });
 
+const mapWorkData = ({
+	company,
+	startDate,
+	endDate,
+	location,
+	position,
+}: GatsbyTypes.MarkdownRemarkFrontmatter): Job => ({
+	company: company ?? '',
+	position: position ?? '',
+	location: location ?? '',
+	startDate: startDate ?? '',
+	endDate: endDate ?? '',
+});
+
 const ResumePage = ({uri, data}: PageProps) => {
 	const workData = (data as any).workData as GatsbyTypes.MarkdownRemarkConnection;
 	const workImages = (data as any).workImages as GatsbyTypes.FileConnection;
@@ -30,20 +45,34 @@ const ResumePage = ({uri, data}: PageProps) => {
 
 	const workImageMap = Utils.getImageMap(workImages.edges ?? [], /\/resume\/work.*\/|$/);
 	const educationImageMap = Utils.getImageMap(educationImages.edges ?? [], /\/resume\/education.*\/|$/);
+
+	console.log(workImages)
+	console.log(educationImages)
+	console.log(workImageMap)
+	console.log(educationImageMap)
+
 	return (
 		<Layout uri={uri}>
 			<Container className="mt-3">
 				<h1 className={classes.title}>Education</h1>
-				<Container
-					className="mb-5 d-flex flex-column flex-lg-row justify-content-center align-items-center"
-					fluid
-				>
+				<Container className="d-flex flex-column flex-lg-row justify-content-center align-items-center" fluid>
 					{educationData.edges.map(({node}) => (
 						<EducationCard
 							key={node.id}
 							education={mapEducationData(node.frontmatter as GatsbyTypes.MarkdownRemarkFrontmatter)}
 							image={educationImageMap[node?.fields?.slug ?? '']}
 							wide={node?.frontmatter?.location?.includes('Darmstadt') ?? false}
+						/>
+					))}
+				</Container>
+				<Container className={`d-flex flex-column justify-content-center align-items-center ${classes.jobs_container}`} fluid>
+					{workData.edges.map(({node}) => (
+						<JobCard
+							key={node.id}
+							jobData={mapWorkData(node.frontmatter as GatsbyTypes.MarkdownRemarkFrontmatter)}
+							image={workImageMap[node?.fields?.slug ?? '']}
+							html={node.html ?? ''}
+							tags={(node.frontmatter?.tags as string[]) ?? []}
 						/>
 					))}
 				</Container>
@@ -81,7 +110,7 @@ export const query = graphql`
 		workImages: allFile(
 			filter: {
 				extension: {eq: "png"}
-				relativePath: {regex: "/company/"}
+				relativePath: {regex: "/logo/"}
 				relativeDirectory: {regex: "/content/resume/work/"}
 			}
 		) {

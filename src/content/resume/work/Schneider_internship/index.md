@@ -7,6 +7,7 @@ tags:
     "JavaScript",
     "Node.js",
     "jQuery",
+    "React.js",
     "Bootstrap",
     "Python",
     "Pandas",

@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import {Utils} from 'utils';
 import Layout from 'components/Layout/Layout';
 import EducationCard, {Education} from 'components/EducationCard/EducationCard';
+import classes from './resume.module.scss';
 
 const mapEducationData = ({
 	university,
@@ -31,18 +32,21 @@ const ResumePage = ({uri, data}: PageProps) => {
 	const educationImageMap = Utils.getImageMap(educationImages.edges ?? [], /\/resume\/education.*\/|$/);
 	return (
 		<Layout uri={uri}>
-			<Container
-				className="mt-5 mb-5 pt-3 d-flex flex-column flex-lg-row justify-content-center align-items-center"
-				fluid
-			>
-				{educationData.edges.map(({node}) => (
-					<EducationCard
-						key={node.id}
-						education={mapEducationData(node.frontmatter as GatsbyTypes.MarkdownRemarkFrontmatter)}
-						image={educationImageMap[node?.fields?.slug ?? '']}
-						wide={node?.frontmatter?.location?.includes('Darmstadt') ?? false}
-					/>
-				))}
+			<Container className="mt-3">
+				<h1 className={classes.title}>Education</h1>
+				<Container
+					className="mb-5 d-flex flex-column flex-lg-row justify-content-center align-items-center"
+					fluid
+				>
+					{educationData.edges.map(({node}) => (
+						<EducationCard
+							key={node.id}
+							education={mapEducationData(node.frontmatter as GatsbyTypes.MarkdownRemarkFrontmatter)}
+							image={educationImageMap[node?.fields?.slug ?? '']}
+							wide={node?.frontmatter?.location?.includes('Darmstadt') ?? false}
+						/>
+					))}
+				</Container>
 			</Container>
 		</Layout>
 	);

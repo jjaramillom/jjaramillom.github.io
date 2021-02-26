@@ -44,6 +44,7 @@ module.exports = {
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sass`,
+		`gatsby-plugin-page-transitions`,
 		{
 			resolve: `gatsby-plugin-google-fonts`,
 			options: {

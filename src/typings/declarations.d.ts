@@ -3,7 +3,7 @@ declare module '*.scss' {
   export = content;
 }
 
-declare module 'gatsby-plugin-transition-link' {
+declare module 'gatsby-plugin-page-transitions' {
   const content: any;
   export = content;
 }

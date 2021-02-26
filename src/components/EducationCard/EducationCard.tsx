@@ -22,7 +22,7 @@ type Props = {
 const cardStyle: React.CSSProperties = {
 	maxWidth: '450px',
 	minWidth: '300px',
-	width: '33%',
+	width: '100%',
 	height: '420px',
 };
 

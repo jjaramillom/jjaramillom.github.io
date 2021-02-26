@@ -1,5 +1,6 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
+import PageTransition from 'gatsby-plugin-page-transitions';
 
 import Header from '@components/Navbar/Navbar';
 import classes from './Layout.module.scss';
@@ -12,7 +13,21 @@ const Layout = ({children, uri, style}: React.PropsWithChildren<Props>) => {
 		<Container fluid className={`px-0 ${classes.container}`}>
 			<Header currentRoute={pathBase ? pathBase[0] : '/'} />
 			<div className={classes.content} style={style}>
-				{children}
+				<PageTransition
+					defaultStyle={{
+						transition: `opacity 1500ms ease-in-out`,
+						opacity: 0,
+					}}
+					transitionStyles={{
+						entering: {opacity: '1'},
+						entered: {opacity: '1'},
+						exiting: {opacity: '0'},
+						exited: {opacity: '0'},
+					}}
+					transitionTime={1000}
+				>
+					{children}
+				</PageTransition>
 			</div>
 			<Footer />
 		</Container>

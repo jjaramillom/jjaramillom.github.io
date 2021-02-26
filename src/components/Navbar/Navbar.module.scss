@@ -1,8 +1,11 @@
 @import '/src/styles/_colors';
 
+$nav-height: 75px;
+
 .navbar {
 	padding: 0;
 	background: rgba($main-background, 0.8);
+	// height: $nav-height;
 	& button {
 		margin: 15px;
 	}
@@ -19,6 +22,16 @@
 	&:hover {
 		color: $main-med;
 		font-weight: bold;
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.navbar_collapse {
+		position: absolute;
+		top: $nav-height;
+		// left: 0;
+		background: rgba($main-background, 0.8);
+		width: 100%;
 	}
 }
 

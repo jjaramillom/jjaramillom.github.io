@@ -46,11 +46,6 @@ const ResumePage = ({uri, data}: PageProps) => {
 	const workImageMap = Utils.getImageMap(workImages.edges ?? [], /\/resume\/work.*\/|$/);
 	const educationImageMap = Utils.getImageMap(educationImages.edges ?? [], /\/resume\/education.*\/|$/);
 
-	console.log(workImages)
-	console.log(educationImages)
-	console.log(workImageMap)
-	console.log(educationImageMap)
-
 	return (
 		<Layout uri={uri}>
 			<Container className="mt-3">
@@ -65,7 +60,10 @@ const ResumePage = ({uri, data}: PageProps) => {
 						/>
 					))}
 				</Container>
-				<Container className={`d-flex flex-column justify-content-center align-items-center ${classes.jobs_container}`} fluid>
+				<Container
+					className={`d-flex flex-column justify-content-center align-items-center ${classes.jobs_container}`}
+					fluid
+				>
 					{workData.edges.map(({node}) => (
 						<JobCard
 							key={node.id}

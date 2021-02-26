@@ -43,7 +43,7 @@ const IndexPage = ({uri}: PageProps) => {
 				<hr className="my-3 w-100" />
 				<div className="d-flex flex-row justify-content-center mt-5">
 					{ICONS.map(({icon, link, label}) => (
-						<div className={`${classes.icon_wrapper}`}>
+						<div key={link} className={`${classes.icon_wrapper}`}>
 							<a href={link} target="_blank" rel="noopener noreferrer" download={link === '/static/resume.pdf'}>
 								<FontAwesomeIcon aria-hidden className={`${classes.icon} `} icon={icon} />
 							</a>

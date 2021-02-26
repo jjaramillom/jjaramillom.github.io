@@ -59,7 +59,7 @@ const JobCard = ({jobData, image, tags, html}: Props) => {
 						<CompanyCard job={jobData} image={image} />
 					</Col>
 					<Col className="col-md-8 col-12">
-						<p className="text-justify mt-2" dangerouslySetInnerHTML={{__html: html}} />
+						<p className="mt-2" dangerouslySetInnerHTML={{__html: html}} />
 					</Col>
 				</Row>
 				<Row>

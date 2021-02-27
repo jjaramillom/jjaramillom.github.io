@@ -43,7 +43,7 @@ module.exports = {
 			{
 				band: 'AC/DC',
 				song: 'You Shook Me All Night Long',
-				link: 'https://youtu.be/zakKvblQ28o',
+				link: 'https://youtu.be/zakKvbIQ28o',
 			},
 			{
 				band: 'The Doors',

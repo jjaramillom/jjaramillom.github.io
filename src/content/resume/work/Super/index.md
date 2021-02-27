@@ -5,6 +5,7 @@ position: "Maintenance Coordinator"
 tags: ["Electrical Engineering", "Mechanical Engineering", "Industrial automation", "Planning"]
 startDate: "2015-12-04"
 endDate: "2016-05-21"
+link: "https://super.com.co"
 ---
 
 * Technical support (mechanical and electrical) for all the packaging lines.</p>

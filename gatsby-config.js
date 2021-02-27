@@ -39,6 +39,29 @@ module.exports = {
 				link: 'https://www.imdb.com/title/tt0338013/?ref_=rt_li_tt',
 			},
 		],
+		musicList: [
+			{
+				band: 'AC/DC',
+				song: 'You Shook Me All Night Long',
+				link: 'https://youtu.be/zakKvblQ28o',
+			},
+			{
+				band: 'The Doors',
+				song: 'Light My Fire',
+				link: 'https://youtu.be/mbj1RFaoyLk',
+			},
+			{
+				band: 'Pink Floyd',
+				song: 'Hey you',
+				link: 'https://youtu.be/c-MU_5VkjtE',
+			},
+			{
+				band: 'Nina Simone',
+				song: 'Feeling Good',
+				link: 'https://youtu.be/BNMKGYiJpvg',
+			},
+		],
+		peopleList: ['Linus Torvalds', 'Richard Branson', 'My dad'],
 	},
 	plugins: [
 		`gatsby-plugin-sharp`,

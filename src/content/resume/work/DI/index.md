@@ -5,6 +5,7 @@ position: "Software Engineer"
 tags: ["TypeScript", "Vue.js", "Node.js", "GraphQL", "Jest", "Docker"]
 startDate: "2020-09-01"
 endDate: "2031-12-31"
+link: "https://device-insight.com/en"
 ---
 
 - Development of an IoT application for Robotics industry.</p>

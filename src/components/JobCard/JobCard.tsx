@@ -14,6 +14,7 @@ export type Job = {
 	position: string;
 	startDate: string;
 	endDate: string;
+	link: string;
 };
 
 type CompanySectionProps = {
@@ -21,13 +22,15 @@ type CompanySectionProps = {
 	image: FluidObject;
 };
 
-const CompanyCard = ({job: {company, location, position, startDate, endDate}, image}: CompanySectionProps) => {
+const CompanyCard = ({job: {company, location, position, startDate, endDate, link}, image}: CompanySectionProps) => {
 	const endDateYear = Number((endDate.match(/(\d+)/) as RegExpMatchArray)[0]);
 	return (
 		<Container fluid>
 			<Img fluid={image} className={classes.image} />
 			<div className={`${classes.text_container} mt-4`}>
-				<h4 className={` mb-1 ${classes.university}`}>{company}</h4>
+				<a href={link} target="_blank" rel="noopener noreferrer">
+					<h4 className={`mb-1 ${classes.company}`}>{company}</h4>
+				</a>
 				<h5 className="mb-3">{location}</h5>
 				<h4 className={`${classes.title} mb-1`}>{position}</h4>
 				<h5 className="mb-0">
@@ -55,16 +58,11 @@ const JobCard = ({jobData, image, tags, html}: Props) => {
 		<Card style={cardStyle}>
 			<Container fluid>
 				<Row className="align-items-center">
-					<Col className="col-md-4 col-12">
+					<Col className="col-md-4 col-12 mb-4 mb-md-0">
 						<CompanyCard job={jobData} image={image} />
 					</Col>
 					<Col className="col-md-8 col-12">
 						<p className="mt-2" dangerouslySetInnerHTML={{__html: html}} />
-					</Col>
-				</Row>
-				<Row>
-					<Col className="col-md-4 col-1"></Col>
-					<Col className="col-md-8 col-12">
 						<div className="d-inline-flex flex-wrap justify-content-center">
 							{tags.map(tag => (
 								<Badge key={tag} pill className={`mr-2 my-1 py-2 px-3 ${classes.badge}`}>

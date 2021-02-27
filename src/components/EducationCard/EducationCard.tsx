@@ -11,6 +11,7 @@ export type Education = {
 	startDate: string;
 	endDate: string;
 	location: string;
+	link: string;
 };
 
 type Props = {
@@ -20,19 +21,21 @@ type Props = {
 };
 
 const cardStyle: React.CSSProperties = {
-	maxWidth: '450px',
+	maxWidth: '480px',
 	minWidth: '300px',
 	width: '100%',
 	height: '420px',
 };
 
-const EducationCard = ({education: {endDate, startDate, location, title, university}, image, wide}: Props) => {
+const EducationCard = ({education: {endDate, startDate, location, title, university, link}, image, wide}: Props) => {
 	return (
 		<Card style={cardStyle}>
 			<Container fluid>
 				<Img fluid={image} className={`${classes.image} ${wide && classes.wide}`} />
 				<div className={`${classes.text_container} mt-4`}>
-					<h4 className={` mb-1 ${classes.university}`}>{university}</h4>
+					<a href={link} target="_blank" rel="noopener noreferrer">
+						<h4 className={` mb-1 ${classes.university}`}>{university}</h4>
+					</a>
 					<h5 className="mb-3">{location}</h5>
 					<h4 className={`${classes.title} mb-1`}>{title}</h4>
 					<h5 className="mb-0">

@@ -14,12 +14,14 @@ const mapEducationData = ({
 	endDate,
 	location,
 	title,
+	link,
 }: GatsbyTypes.MarkdownRemarkFrontmatter): Education => ({
 	university: university ?? '',
 	title: title ?? '',
 	location: location ?? '',
 	startDate: startDate ?? '',
 	endDate: endDate ?? '',
+	link: link ?? '',
 });
 
 const mapWorkData = ({
@@ -28,12 +30,14 @@ const mapWorkData = ({
 	endDate,
 	location,
 	position,
+	link,
 }: GatsbyTypes.MarkdownRemarkFrontmatter): Job => ({
 	company: company ?? '',
 	position: position ?? '',
 	location: location ?? '',
 	startDate: startDate ?? '',
 	endDate: endDate ?? '',
+	link: link ?? '',
 });
 
 const ResumePage = ({uri, data}: PageProps) => {
@@ -60,6 +64,7 @@ const ResumePage = ({uri, data}: PageProps) => {
 						/>
 					))}
 				</Container>
+				<h1 className={`mt-5 ${classes.title}`}>Work Experience</h1>
 				<Container
 					className={`d-flex flex-column justify-content-center align-items-center ${classes.jobs_container}`}
 					fluid
@@ -98,6 +103,7 @@ export const query = graphql`
 						tags
 						startDate(formatString: "MMM, YYYY")
 						endDate(formatString: "MMM, YYYY")
+						link
 					}
 					fields {
 						slug
@@ -137,6 +143,7 @@ export const query = graphql`
 						title
 						startDate(formatString: "MMM, YYYY")
 						endDate(formatString: "MMM, YYYY")
+						link
 					}
 					fields {
 						slug

@@ -17,19 +17,32 @@ const mapBookToElement = ({author, link, title}: GatsbyTypes.SiteSiteMetadataBoo
 
 const mapMovieToElement = ({link, title, year}: GatsbyTypes.SiteSiteMetadataMoviesList) => (
 	<li key={title}>
-		<a className={classes.link} target="_blank" rel="noopener noreferrer" href={link}>
+		<a target="_blank" rel="noopener noreferrer" href={link}>
 			{title}
 		</a>
-		&nbsp;({year})
+		&nbsp;{year}
 	</li>
 );
 
+const mapMusicToElement = ({band, song, link}: GatsbyTypes.SiteSiteMetadataMusicList) => (
+	<li key={band}>
+		<a target="_blank" rel="noopener noreferrer" href={link}>
+			{song}
+		</a>
+		&nbsp;-{band}
+	</li>
+);
+
+const mapPersonToElement = (person: string) => <li key={person}>{person}</li>;
+
 const BlogPage = ({uri}: PageProps) => {
-	const {author, designations, moviesList, booksList} = useStaticQuery<GatsbyTypes.Query>(query).site
-		?.siteMetadata as GatsbyTypes.SiteSiteMetadata;
+	const {author, designations, moviesList, booksList, peopleList, musicList} = useStaticQuery<GatsbyTypes.Query>(query)
+		.site?.siteMetadata as GatsbyTypes.SiteSiteMetadata;
 
 	const movieElements = moviesList?.map(m => mapMovieToElement(m as GatsbyTypes.SiteSiteMetadataMoviesList));
 	const bookElements = booksList?.map(b => mapBookToElement(b as GatsbyTypes.SiteSiteMetadataBooksList));
+	const MusicElements = musicList?.map(m => mapMusicToElement(m as GatsbyTypes.SiteSiteMetadataMusicList));
+	const PersonElements = peopleList?.map(p => mapPersonToElement(p as string));
 
 	return (
 		<Layout uri={uri}>
@@ -56,8 +69,12 @@ const BlogPage = ({uri}: PageProps) => {
 						learn and open to get involved in different areas.
 					</p>
 					<p className="">
-						In my leisure time, I'm usually riding my bike, chilling with friends (before Corona), playing some
-						video-games, and of course, hitting the keyboard.
+						In my leisure time, I'm usually riding my bike, chilling with friends (before Covid-19 at least), playing
+						some video-games, and of course, hitting the keyboard.
+					</p>
+					<p className="">
+						One of my other passions is to learn new stuff (I know, it sounds cliché). I'm usually learning something,
+						be it tech-related, or something random such as Mongol history(I love history, BTW).
 					</p>
 				</article>
 				<article className="w-100 m-auto">
@@ -70,6 +87,10 @@ const BlogPage = ({uri}: PageProps) => {
 					<ul className={classes.list}>{bookElements}</ul>
 					<p className="text-center font-weight-bolder mb-3">Some of my favorite movies</p>
 					<ul className={classes.list}>{movieElements}</ul>
+					<p className="text-center font-weight-bolder mb-3">Some of my favorite songs</p>
+					<ul className={classes.list}>{MusicElements}</ul>
+					<p className="text-center font-weight-bolder mb-3">Some people I admire</p>
+					<ul className={classes.list}>{PersonElements}</ul>
 				</article>
 			</Container>
 		</Layout>
@@ -96,6 +117,12 @@ const query = graphql`
 					link
 					year
 				}
+				musicList {
+					band
+					song
+					link
+				}
+				peopleList
 			}
 		}
 	}

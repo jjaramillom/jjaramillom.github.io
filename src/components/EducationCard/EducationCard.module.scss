@@ -15,7 +15,10 @@
 
 .university {
 	font-weight: bold;
-	color: $main-dark;
+	color: $main-orange;
+	&:hover {
+		font-weight: 800;
+	}
 }
 
 .title {

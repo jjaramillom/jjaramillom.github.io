@@ -18,6 +18,7 @@ tags:
   ]
 startDate: "2019-05-04"
 endDate: "2019-12-21"
+link: "https://se.com"
 ---
 
 - Development of a machine anomaly detection system together with an R&D team in France.</p>

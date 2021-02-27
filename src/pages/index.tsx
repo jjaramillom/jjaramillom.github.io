@@ -8,6 +8,7 @@ import {faEnvelopeSquare, faIdCard} from '@fortawesome/free-solid-svg-icons';
 import Layout from 'components/Layout/Layout';
 import Typewriter from 'components/Typewriter/Typewriter';
 import classes from './index.module.scss';
+import resume from '../../static/resume.pdf';
 
 type IconConfig = {
 	icon: IconDefinition;
@@ -27,7 +28,7 @@ const ICONS: IconConfig[] = [
 		link: 'https://www.linkedin.com/in/jjaramillom',
 	},
 	{icon: faEnvelopeSquare, label: 'Send me an email', link: 'mailto:jjaramillom@unal.edu.co'},
-	{icon: faIdCard, label: 'Download my CV', link: '/static/resume.pdf'}, // ../../resume.pdf
+	{icon: faIdCard, label: 'Download my CV', link: resume},
 ];
 
 const IndexPage = ({uri}: PageProps) => {
@@ -44,7 +45,7 @@ const IndexPage = ({uri}: PageProps) => {
 				<div className="d-flex flex-row justify-content-center mt-5">
 					{ICONS.map(({icon, link, label}) => (
 						<div key={link} className={`${classes.icon_wrapper}`}>
-							<a href={link} target="_blank" rel="noopener noreferrer" download={link === '/static/resume.pdf'}>
+							<a href={link} target="_blank" rel="noopener noreferrer" download={label === 'Download my CV'}>
 								<FontAwesomeIcon aria-hidden className={`${classes.icon} `} icon={icon} />
 							</a>
 							<div className={`mt-1 ${classes.tooltip}`}>{`${label}`}</div>

@@ -10,17 +10,19 @@ const BlogPage = ({uri, data}: PageProps<GatsbyTypes.Query>) => {
 	return (
 		<Layout uri={uri}>
 			<Container className="mt-3">
-				<Title className="mb-5">Random thoughts</Title>
-				{data.allMarkdownRemark.edges.map(({node}) => (
-					<BlogCard
-						key={node.id}
-						blogPath={node.fields?.slug ?? '/blog'}
-						title={node.frontmatter?.title ?? ''}
-						date={node.frontmatter?.date ?? ''}
-					>
-						<BlogCard.body>{node.excerpt}</BlogCard.body>
-					</BlogCard>
-				))}
+				<Title>Random thoughts</Title>
+				<Container className="d-flex flex-column justify-content-center" fluid>
+					{data.allMarkdownRemark.edges.map(({node}) => (
+						<BlogCard
+							key={node.id}
+							blogPath={node.fields?.slug ?? '/blog'}
+							title={node.frontmatter?.title ?? ''}
+							date={node.frontmatter?.date ?? ''}
+						>
+							<BlogCard.body>{node.excerpt}</BlogCard.body>
+						</BlogCard>
+					))}
+				</Container>
 			</Container>
 		</Layout>
 	);
@@ -44,7 +46,7 @@ export const query = graphql`
 					fields {
 						slug
 					}
-					excerpt(pruneLength:160)
+					excerpt(pruneLength: 160)
 				}
 			}
 		}

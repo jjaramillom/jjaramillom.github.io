@@ -26,9 +26,11 @@ const EducationCard = ({education: {endDate, startDate, location, title, univers
 			<Container fluid>
 				<Img fluid={image} className={`${classes.image} ${wide && classes.wide}`} />
 				<div className={`${classes.text_container} mt-4`}>
-					<a href={link} target="_blank" rel="noopener noreferrer">
-						<h4 className={` mb-1 ${classes.university}`}>{university}</h4>
-					</a>
+					<h4 className="mb-1">
+						<a href={link} target="_blank" rel="noopener noreferrer">
+							{university}
+						</a>
+					</h4>
 					<h5 className="mb-3">{location}</h5>
 					<h4 className={`${classes.title} mb-1`}>{title}</h4>
 					<h5 className="mb-0">

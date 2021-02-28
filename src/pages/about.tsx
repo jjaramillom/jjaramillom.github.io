@@ -45,8 +45,8 @@ const BlogPage = ({uri}: PageProps) => {
 	const PersonElements = peopleList?.map(p => mapPersonToElement(p as string));
 
 	const extraInformation = [
-		{title: 'Some of my favorite books', elements: bookElements},
 		{title: 'Some of my favorite movies', elements: movieElements},
+		{title: 'Some of my favorite books', elements: bookElements},
 		{title: 'Some of my favorite songs', elements: MusicElements},
 		{title: 'Some people I admire', elements: PersonElements},
 	];
@@ -94,7 +94,7 @@ const BlogPage = ({uri}: PageProps) => {
 						{extraInformation.map(el => (
 							<div key={el.title} className={classes.favorite_list}>
 								<p className="font-weight-bolder mb-2">{el.title}</p>
-								<ul>{el.elements}</ul>
+								<ul className={classes.list}>{el.elements}</ul>
 							</div>
 						))}
 					</div>

@@ -19,7 +19,7 @@ span.pipe {
 	}
 }
 
-ul {
+.list {
 	margin-bottom: 0;
 	font-size: 0.9rem;
 	list-style: none;
@@ -34,13 +34,12 @@ ul {
 }
 
 .favorite_list {
-	margin-bottom: 1.5rem;
-	margin-right: 2rem;
+	margin-bottom: 2rem;
 }
 
 @media only screen and (min-width: 1200px) {
 	.favorite_list {
-		min-width: 400px;
+		min-width: 50%;
 	}
 }
 

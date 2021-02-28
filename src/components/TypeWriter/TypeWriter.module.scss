@@ -1,30 +1,30 @@
 @import '/src/styles/_colors';
 
+.container {
+	width: fit-content;
+	margin: auto;
+}
+
 .typewriter {
 	width: fit-content;
 	margin: auto;
-	white-space: break-spaces;
+	// white-space: break-spaces;
 	& p {
 		overflow: hidden;
 		white-space: nowrap;
-		margin: 0 auto;
+		margin: 0;
 		letter-spacing: 0.1em;
 	}
 
 	&.active p {
 		border-right: 0.15em solid $main-orange;
-		&.wide {
-			animation: typing 4s steps(40, end), blink-caret 1s step-end infinite;
-		}
-		&.narrow {
-			animation: typing 2s steps(40, end), blink-caret 1s step-end infinite;
-		}
+		animation: typing 3s steps(40, end), blink-caret 1s step-end infinite;
 	}
 }
 
 @keyframes typing {
 	from {
-		width: 0;
+		width: 1%;
 	}
 	to {
 		width: 100%;

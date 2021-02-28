@@ -28,9 +28,11 @@ const CompanyCard = ({job: {company, location, position, startDate, endDate, lin
 		<Container fluid>
 			<Img fluid={image} className={classes.image} />
 			<div className={`${classes.text_container} mt-4`}>
-				<a href={link} target="_blank" rel="noopener noreferrer">
-					<h4 className={`mb-1 ${classes.company}`}>{company}</h4>
-				</a>
+				<h4 className="mb-1">
+					<a href={link} target="_blank" rel="noopener noreferrer">
+						{company}
+					</a>
+				</h4>
 				<h5 className="mb-3">{location}</h5>
 				<h4 className={`${classes.title} mb-1`}>{position}</h4>
 				<h5 className="mb-0">

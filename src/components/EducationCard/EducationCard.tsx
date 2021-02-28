@@ -20,16 +20,9 @@ type Props = {
 	wide: boolean;
 };
 
-const cardStyle: React.CSSProperties = {
-	maxWidth: '480px',
-	minWidth: '300px',
-	width: '100%',
-	height: '420px',
-};
-
 const EducationCard = ({education: {endDate, startDate, location, title, university, link}, image, wide}: Props) => {
 	return (
-		<Card style={cardStyle}>
+		<Card className={classes.card}>
 			<Container fluid>
 				<Img fluid={image} className={`${classes.image} ${wide && classes.wide}`} />
 				<div className={`${classes.text_container} mt-4`}>

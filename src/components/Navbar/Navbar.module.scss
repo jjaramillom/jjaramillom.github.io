@@ -20,8 +20,14 @@ $nav-height: 75px;
 	color: $main-med !important;
 	text-transform: capitalize;
 	&:hover {
-		color: $main-med;
-		font-weight: bold;
+		color: $main-dark !important;
+		text-decoration: underline;
+	}
+	&.active {
+		color: $main-orange !important;
+		&:hover {
+			color: $main-orange-dark !important;
+		}
 	}
 }
 
@@ -29,16 +35,7 @@ $nav-height: 75px;
 	.navbar_collapse {
 		position: absolute;
 		top: $nav-height;
-		// left: 0;
 		background: rgba($main-background, 0.8);
 		width: 100%;
-	}
-}
-
-.active {
-	color: $main-orange !important;
-	&:hover {
-		color: $main-orange;
-		font-weight: bold !important;
 	}
 }

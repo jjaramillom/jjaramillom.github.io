@@ -15,7 +15,7 @@ const Header = ({currentRoute}: Props) => {
 		{to: '/about', label: 'about'},
 		{to: '/resume', label: 'resume'},
 		// {to: '/projects', label: 'projects'},
-		// {to: '/blog', label: 'blog'},
+		{to: '/blog', label: 'blog'},
 	];
 
 	return (
@@ -24,14 +24,13 @@ const Header = ({currentRoute}: Props) => {
 			<Navbar.Collapse className={classes.navbar_collapse} id="responsive-navbar-nav">
 				<Nav className={`mr-auto ${classes.nav}`} activeKey={currentRoute}>
 					{routes.map(({to, label}) => (
-						<Nav.Link
-							key={to}
-							className={`${classes.nav_item} ${to === currentRoute ? classes.active : ''}`}
-							to={to}
-							as={Link}
-						>
-							{label}
-						</Nav.Link>
+							<Nav.Link
+								className={`${classes.nav_item} ${to === currentRoute ? classes.active : ''}`}
+								to={to}
+								as={Link}
+							>
+								{label}
+							</Nav.Link>
 					))}
 				</Nav>
 			</Navbar.Collapse>

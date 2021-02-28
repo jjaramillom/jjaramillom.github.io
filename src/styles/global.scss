@@ -47,8 +47,8 @@ a {
 	background-color: transparent;
 	-webkit-text-decoration-skip: objects;
 	&:hover {
-		color: $main-orange;
-		font-weight: 500;
+		color: $main-orange-dark;
+		// font-weight: 500;
 	}
 }
 a:active,

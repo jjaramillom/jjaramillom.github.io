@@ -1,16 +1,12 @@
 @import '/src/styles/_colors';
 
 .title {
-	font-size: 3rem;
-	text-align: center;
-	font-weight: normal;
-	&.name {
-		& span:first-child {
-			font-weight: 500;
-		}
-		& span:last-child {
-			color: $main-orange;
-		}
+	& span:first-child {
+		font-weight: 500;
+	}
+	& span:last-child {
+		color: $main-orange;
+		font-weight: normal;
 	}
 }
 

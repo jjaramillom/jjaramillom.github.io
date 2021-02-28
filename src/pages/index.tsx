@@ -20,8 +20,9 @@ import {faEnvelopeSquare, faIdCard} from '@fortawesome/free-solid-svg-icons';
 
 import Layout from 'components/Layout/Layout';
 import Typewriter from 'components/Typewriter/Typewriter';
-import classes from './index.module.scss';
+import Title from 'components/Title/Title';
 import resume from '../../static/resume.pdf';
+import classes from './index.module.scss';
 
 type ContactIconConfig = {
 	icon: IconDefinition;
@@ -67,9 +68,9 @@ const IndexPage = ({uri}: PageProps) => {
 	return (
 		<Layout uri={uri}>
 			<Container className="mt-3">
-				<h1 className={`${classes.title} ${classes.name}`}>
+				<Title className={classes.title}>
 					<span>{siteMetadata?.author?.name}</span> <span>{siteMetadata?.author?.lastName}</span>
-				</h1>
+				</Title>
 				<Typewriter />
 				<hr className="my-3 w-100" />
 				<div className="d-flex flex-row justify-content-center my-5">
@@ -86,7 +87,11 @@ const IndexPage = ({uri}: PageProps) => {
 				<div className={classes.tech_grid}>
 					{TECH_ICONS.map(({icon, label}) => (
 						<div key={label} className={`${classes.icon_wrapper} ${classes.tech}`}>
-							<FontAwesomeIcon aria-hidden className={`${classes.icon} ${classes.tech} ${classes.animated}`} icon={icon} />
+							<FontAwesomeIcon
+								aria-hidden
+								className={`${classes.icon} ${classes.tech} ${classes.animated}`}
+								icon={icon}
+							/>
 							<div className={`mt-1 ${classes.tooltip}`}>{`${label}`}</div>
 						</div>
 					))}

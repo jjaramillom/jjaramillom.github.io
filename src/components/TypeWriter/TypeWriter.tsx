@@ -6,7 +6,10 @@ const TypeWriter = () => {
 	const [delayedTypewritterClass, setDelayedTypewritterClass] = useState('');
 
 	useEffect(() => {
-		setTimeout(() => setDelayedTypewritterClass(classes.active), 2500);
+		const classTimeout = setTimeout(() => setDelayedTypewritterClass(classes.active), 2500);
+		return () => {
+			clearTimeout(classTimeout);
+		};
 	}, []);
 
 	return (

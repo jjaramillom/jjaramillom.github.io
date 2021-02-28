@@ -4,11 +4,12 @@ import classes from './Card.module.scss';
 
 type Props = {
 	style?: React.CSSProperties;
+	className?: string;
 };
 
-const EducationCard = ({children, style}: React.PropsWithChildren<Props>) => {
+const EducationCard = ({children, style, className}: React.PropsWithChildren<Props>) => {
 	return (
-		<div className={classes.container} style={style}>
+		<div className={`${className ?? ''} ${classes.container}`} style={style}>
 			{children}
 		</div>
 	);

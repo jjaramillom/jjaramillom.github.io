@@ -1,0 +1,29 @@
+@import '/src/styles/_colors';
+
+.card {
+	max-width: 700px;
+	margin: auto;
+}
+
+.header {
+	h1 {
+		font-size: 1.5rem;
+		margin-bottom: 0.5rem;
+		color: $main-orange;
+	}
+	h2 {
+		font-size: 1rem;
+    font-weight: 500;
+		font-style: italic;
+		color: rgba($main-orange, 0.8);
+    margin-bottom: 1rem;
+	}
+	&:hover {
+		h1 {
+			color: $main-orange-dark;
+		}
+		h2 {
+			color: rgba($main-orange-dark, 0.8);
+		}
+	}
+}

@@ -5,7 +5,8 @@ import Container from 'react-bootstrap/Container';
 import {Utils} from 'utils';
 import Layout from 'components/Layout/Layout';
 import EducationCard, {Education} from 'components/EducationCard/EducationCard';
-import JobCard, {Job} from '@components/JobCard/JobCard';
+import JobCard, {Job} from 'components/JobCard/JobCard';
+import Title from 'components/Title/Title';
 import classes from './resume.module.scss';
 
 const mapEducationData = ({
@@ -53,7 +54,7 @@ const ResumePage = ({uri, data}: PageProps) => {
 	return (
 		<Layout uri={uri}>
 			<Container className="mt-3">
-				<h1 className={classes.title}>Education</h1>
+				<Title>Education</Title>
 				<Container className="d-flex flex-column flex-lg-row justify-content-center align-items-center" fluid>
 					{educationData.edges.map(({node}) => (
 						<EducationCard
@@ -64,7 +65,7 @@ const ResumePage = ({uri, data}: PageProps) => {
 						/>
 					))}
 				</Container>
-				<h1 className={`mt-5 ${classes.title}`}>Work Experience</h1>
+				<Title className='mt-5'>Work Experience</Title>
 				<Container
 					className={`d-flex flex-column justify-content-center align-items-center ${classes.jobs_container}`}
 					fluid

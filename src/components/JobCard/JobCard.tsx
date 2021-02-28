@@ -48,14 +48,9 @@ type Props = {
 	image: FluidObject;
 };
 
-const cardStyle: React.CSSProperties = {
-	width: '100%',
-	height: 'fit-content',
-};
-
 const JobCard = ({jobData, image, tags, html}: Props) => {
 	return (
-		<Card style={cardStyle}>
+		<Card className={classes.card}>
 			<Container fluid>
 				<Row className="align-items-center">
 					<Col className="col-md-4 col-12 mb-4 mb-md-0">

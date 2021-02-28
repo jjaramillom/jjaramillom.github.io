@@ -19,14 +19,31 @@ span.pipe {
 	}
 }
 
-ul.list {
-	margin-bottom: 1rem;
+ul {
+	margin-bottom: 0;
 	font-size: 0.9rem;
 	list-style: none;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	& li {
-		text-align: center;
+}
+
+.icon {
+	font-size: 5.75rem;
+	color: rgba($main-light, 0.5);
+	overflow: hidden;
+}
+
+.favorite_list {
+	margin-bottom: 1.5rem;
+	margin-right: 2rem;
+}
+
+@media only screen and (min-width: 1200px) {
+	.favorite_list {
+		min-width: 400px;
 	}
+}
+
+li:last-child {
+	margin-bottom: 0;
 }

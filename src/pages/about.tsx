@@ -44,6 +44,13 @@ const BlogPage = ({uri}: PageProps) => {
 	const MusicElements = musicList?.map(m => mapMusicToElement(m as GatsbyTypes.SiteSiteMetadataMusicList));
 	const PersonElements = peopleList?.map(p => mapPersonToElement(p as string));
 
+	const extraInformation = [
+		{title: 'Some of my favorite books', elements: bookElements},
+		{title: 'Some of my favorite movies', elements: movieElements},
+		{title: 'Some of my favorite songs', elements: MusicElements},
+		{title: 'Some people I admire', elements: PersonElements},
+	];
+
 	return (
 		<Layout uri={uri}>
 			<Container className="d-flex flex-column align-items-center">
@@ -74,7 +81,7 @@ const BlogPage = ({uri}: PageProps) => {
 					</p>
 					<p className="">
 						One of my other passions is to learn new stuff (I know, it sounds cliché). I'm usually learning something,
-						be it tech-related, or something random such as Mongol history(I love history, BTW).
+						be it tech-related, or something random such as Mongol history (I love history, BTW).
 					</p>
 				</article>
 				<article className="w-100 m-auto">
@@ -83,14 +90,14 @@ const BlogPage = ({uri}: PageProps) => {
 						I truly think you don't only hire a developer, but a human being. So in case you're interested, here's some
 						extra information about me.
 					</p>
-					<p className="text-center font-weight-bolder mb-3">Some of my favorite books</p>
-					<ul className={classes.list}>{bookElements}</ul>
-					<p className="text-center font-weight-bolder mb-3">Some of my favorite movies</p>
-					<ul className={classes.list}>{movieElements}</ul>
-					<p className="text-center font-weight-bolder mb-3">Some of my favorite songs</p>
-					<ul className={classes.list}>{MusicElements}</ul>
-					<p className="text-center font-weight-bolder mb-3">Some people I admire</p>
-					<ul className={classes.list}>{PersonElements}</ul>
+					<div className="d-flex flex-column flex-xl-row flex-wrap">
+						{extraInformation.map(el => (
+							<div key={el.title} className={classes.favorite_list}>
+								<p className="font-weight-bolder mb-2">{el.title}</p>
+								<ul>{el.elements}</ul>
+							</div>
+						))}
+					</div>
 				</article>
 			</Container>
 		</Layout>

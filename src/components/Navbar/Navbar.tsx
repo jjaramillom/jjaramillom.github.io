@@ -24,13 +24,14 @@ const Header = ({currentRoute}: Props) => {
 			<Navbar.Collapse className={classes.navbar_collapse} id="responsive-navbar-nav">
 				<Nav className={`mr-auto ${classes.nav}`} activeKey={currentRoute}>
 					{routes.map(({to, label}) => (
-							<Nav.Link
-								className={`${classes.nav_item} ${to === currentRoute ? classes.active : ''}`}
-								to={to}
-								as={Link}
-							>
-								{label}
-							</Nav.Link>
+						<Nav.Link
+							key={to}
+							className={`${classes.nav_item} ${to === currentRoute ? classes.active : ''}`}
+							to={to}
+							as={Link}
+						>
+							{label}
+						</Nav.Link>
 					))}
 				</Nav>
 			</Navbar.Collapse>

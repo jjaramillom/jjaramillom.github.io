@@ -1,0 +1,10 @@
+@import '/src/styles/_colors';
+
+.title {
+	margin-top: 20vh;
+	font-size: 2.5rem;
+	div {
+		color: $main-orange;
+    font-size: 3.5rem;
+	}
+}

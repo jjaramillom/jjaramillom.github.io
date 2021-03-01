@@ -3,6 +3,7 @@ import {PageProps, graphql} from 'gatsby';
 import Container from 'react-bootstrap/Container';
 
 import {Utils} from 'utils';
+import Seo from 'components/Seo/Seo';
 import Layout from 'components/Layout/Layout';
 import EducationCard, {Education} from 'components/EducationCard/EducationCard';
 import JobCard, {Job} from 'components/JobCard/JobCard';
@@ -53,6 +54,7 @@ const ResumePage = ({uri, data}: PageProps) => {
 
 	return (
 		<Layout uri={uri}>
+			<Seo title="Resume" />
 			<Container className="mt-3">
 				<Title>Education</Title>
 				<Container className="d-flex flex-column flex-lg-row justify-content-center align-items-center" fluid>
@@ -65,7 +67,7 @@ const ResumePage = ({uri, data}: PageProps) => {
 						/>
 					))}
 				</Container>
-				<Title className='mt-5'>Work Experience</Title>
+				<Title className="mt-5">Work Experience</Title>
 				<Container
 					className={`d-flex flex-column justify-content-center align-items-center ${classes.jobs_container}`}
 					fluid

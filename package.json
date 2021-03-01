@@ -15,10 +15,6 @@
     "deploy": "gatsby build && gh-pages -d public -b master"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.34",
-    "@fortawesome/free-brands-svg-icons": "^5.15.2",
-    "@fortawesome/free-solid-svg-icons": "^5.15.2",
-    "@fortawesome/react-fontawesome": "^0.1.14",
     "@react-icons/all-files": "^4.1.0",
     "bootstrap": "^4.6.0",
     "gatsby": "^2.26.1",
@@ -38,9 +34,11 @@
     "node-sass": "^5.0.0",
     "react": "^16.12.0",
     "react-bootstrap": "^1.5.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "@types/react-helmet": "^6.1.0",
     "env-cmd": "^10.1.0",
     "eslint": "^7.20.0",
     "eslint-config-prettier": "^8.0.0",

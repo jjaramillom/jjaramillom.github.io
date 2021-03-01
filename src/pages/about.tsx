@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Image from 'react-bootstrap/Image';
 
 import Layout from 'components/Layout/Layout';
+import Seo from 'components/Seo/Seo';
 import classes from './about.module.scss';
 
 const mapBookToElement = ({author, link, title}: GatsbyTypes.SiteSiteMetadataBooksList) => (
@@ -53,6 +54,7 @@ const BlogPage = ({uri}: PageProps) => {
 
 	return (
 		<Layout uri={uri}>
+			<Seo title="About Me" />
 			<Container className="d-flex flex-column align-items-center">
 				<Image className={classes.image} roundedCircle src={`/pictures/profile.png`} alt="" />
 				<article className="pt-2 text-justify">
@@ -69,11 +71,11 @@ const BlogPage = ({uri}: PageProps) => {
 						))}
 					</div>
 					<p className="mt-4 pt-2">
-						Hello there! My name is <b>{`${author?.name} ${author?.lastName}`}</b>, an Electronic Engineer turned
-						Software Developer. I have been in Germany since 2017, when I came to study a MSc. in Electrical Engineering
-						and IT. For the last 3 years I have been working in software development in the areas of IoT, Machine
-						Learning, and Telecommunications. I consider myself to be a disciplined and resilient person, always keen to
-						learn and open to get involved in different areas.
+						Hello there! My name is <b>{author}</b>, an Electronic Engineer turned Software Developer. I have been in
+						Germany since 2017, when I came to study a MSc. in Electrical Engineering and IT. For the last 3 years I
+						have been working in software development in the areas of IoT, Machine Learning, and Telecommunications. I
+						consider myself to be a disciplined and resilient person, always keen to learn and open to get involved in
+						different areas.
 					</p>
 					<p className="">
 						In my leisure time, I'm usually riding my bike, chilling with friends (before Covid-19 at least), playing
@@ -109,10 +111,7 @@ const query = graphql`
 	query {
 		site {
 			siteMetadata {
-				author {
-					name
-					lastName
-				}
+				author
 				designations
 				booksList {
 					title

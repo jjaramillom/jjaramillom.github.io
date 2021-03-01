@@ -8,10 +8,21 @@ module.exports = {
 	pathPrefix: '/jjaramillom.github.io',
 	siteMetadata: {
 		title: 'personal-site',
-		author: {
-			name: 'Jacobo',
-			lastName: 'Jaramillo',
-		},
+		description: 'A colombian software developer living in Munich, Germany.',
+		author: 'Jacobo Jaramillo',
+		keywords: [
+			'jacobo',
+			'jaramillo',
+			'software',
+			'engineer',
+			'front',
+			'fullstack',
+			'javascript',
+			'typescript',
+			'react',
+			'germany',
+			'colombia',
+		],
 		designations: ['TypeScript lover', 'Your fullstack guy', 'Avid learner', 'Gamer', 'Tennis player'],
 		booksList: [
 			{

@@ -11,7 +11,7 @@ const Layout = ({children, uri, style}: React.PropsWithChildren<Props>) => {
 	const pathBase = uri.match(/\/\w*/);
 	return (
 		<Container fluid className={`px-0 ${classes.container}`}>
-			<Navbar currentRoute={pathBase ? pathBase[0] : '/'} />
+			<Navbar currentRoute={pathBase ? pathBase[0] : ''} />
 			<div className={classes.content} style={style}>
 				<PageTransition
 					defaultStyle={{

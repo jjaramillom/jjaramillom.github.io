@@ -2,6 +2,7 @@ import React from 'react';
 import {PageProps, graphql} from 'gatsby';
 import Container from 'react-bootstrap/Container';
 
+import Seo from 'components/Seo/Seo';
 import Layout from 'components/Layout/Layout';
 import Title from 'components/Title/Title';
 import BlogCard from 'components/BlogCard/BlogCard';
@@ -9,6 +10,7 @@ import BlogCard from 'components/BlogCard/BlogCard';
 const BlogPage = ({uri, data}: PageProps<GatsbyTypes.Query>) => {
 	return (
 		<Layout uri={uri}>
+			<Seo title="Blog" />
 			<Container className="mt-3">
 				<Title>Random thoughts</Title>
 				<Container className="d-flex flex-column justify-content-center" fluid>

@@ -1,75 +1,97 @@
 import React from 'react';
 import {graphql, useStaticQuery, PageProps} from 'gatsby';
 import Container from 'react-bootstrap/Container';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {
-	IconDefinition,
-	faLinkedin,
-	faGithubSquare,
-	faJs,
-	faCss3,
-	faHtml5,
-	faReact,
-	faVuejs,
-	faNodeJs,
-	faPython,
-	faDocker,
-	faGit,
-} from '@fortawesome/free-brands-svg-icons';
-import {faEnvelopeSquare, faIdCard} from '@fortawesome/free-solid-svg-icons';
+import {FaEnvelopeSquare} from '@react-icons/all-files/fa/FaEnvelopeSquare';
+import {FaIdCard} from '@react-icons/all-files/fa/FaIdCard';
+import {FaLinkedin} from '@react-icons/all-files/fa/FaLinkedin';
+import {FaGithubSquare} from '@react-icons/all-files/fa/FaGithubSquare';
+import {SiJavascript} from '@react-icons/all-files/si/SiJavascript';
+import {SiTypescript} from '@react-icons/all-files/si/SiTypescript';
+import {SiReact} from '@react-icons/all-files/si/SiReact';
+import {SiNodeDotJs} from '@react-icons/all-files/si/SiNodeDotJs';
+import {FaVuejs} from '@react-icons/all-files/Fa/FaVuejs';
+import {SiGraphql} from '@react-icons/all-files/si/SiGraphql';
+import {SiCss3} from '@react-icons/all-files/si/SiCss3';
+import {SiHtml5} from '@react-icons/all-files/si/SiHtml5';
+import {SiRedux} from '@react-icons/all-files/si/SiRedux';
+import {SiPython} from '@react-icons/all-files/si/SiPython';
+import {SiFlask} from '@react-icons/all-files/si/SiFlask';
+import {SiMongodb} from '@react-icons/all-files/si/SiMongodb';
+import {GrMysql} from '@react-icons/all-files/gr/GrMysql';
+import {FaGit} from '@react-icons/all-files/fa/FaGit';
+import {SiDocker} from '@react-icons/all-files/si/SiDocker';
 
+import Seo from 'components/Seo/Seo';
 import Layout from 'components/Layout/Layout';
 import Typewriter from 'components/Typewriter/Typewriter';
 import Title from 'components/Title/Title';
 import resume from '../../static/resume.pdf';
 import classes from './index.module.scss';
+import {IconType} from '@react-icons/all-files';
 
 type ContactIconConfig = {
-	icon: IconDefinition;
+	icon: JSX.Element;
 	link: string;
 	label: string;
 };
 
 type TechIconConfig = {
-	icon: IconDefinition;
+	icon: JSX.Element;
 	label: string;
 };
 
+const createTechIconComponent = (Icon: IconType): JSX.Element => <Icon className={`${classes.icon} ${classes.tech}`} />;
+const createAnimatedIconComponent = (Icon: IconType): JSX.Element => (
+	<Icon className={`${classes.icon} ${classes.animated}`} />
+);
+
 const TECH_ICONS: TechIconConfig[] = [
-	{icon: faJs, label: 'JavaScript'},
-	{icon: faReact, label: 'React.js'},
-	{icon: faVuejs, label: 'Vue.js'},
-	{icon: faCss3, label: 'CSS'},
-	{icon: faHtml5, label: 'HTML'},
-	{icon: faNodeJs, label: 'Node.js'},
-	{icon: faPython, label: 'Python'},
-	{icon: faDocker, label: 'Docker'},
-	{icon: faGit, label: 'Git'},
+	{icon: createTechIconComponent(SiJavascript), label: 'JavaScript'},
+	{icon: createTechIconComponent(SiTypescript), label: 'Typescript'},
+	{icon: createTechIconComponent(SiReact), label: 'React.js'},
+	{icon: createTechIconComponent(SiNodeDotJs), label: 'Node.js'},
+	{icon: createTechIconComponent(FaVuejs), label: 'Vue.js'},
+	{icon: createTechIconComponent(SiGraphql), label: 'GraphQL'},
+	{icon: createTechIconComponent(SiCss3), label: 'CSS'},
+	{icon: createTechIconComponent(SiHtml5), label: 'HTML'},
+	{icon: createTechIconComponent(SiRedux), label: 'Redux'},
+	{icon: createTechIconComponent(SiPython), label: 'Python'},
+	{icon: createTechIconComponent(SiFlask), label: 'Flask'},
+	{icon: createTechIconComponent(SiMongodb), label: 'MongoDB'},
+	{icon: createTechIconComponent(GrMysql), label: 'MySQL'},
+	{icon: createTechIconComponent(FaGit), label: 'Git'},
+	{icon: createTechIconComponent(SiDocker), label: 'Docker'},
 ];
 
 const CONTACT_ICONS: ContactIconConfig[] = [
 	{
-		icon: faGithubSquare,
+		icon: createAnimatedIconComponent(FaGithubSquare),
 		label: 'Github',
 		link: 'https://www.github.com/jjaramillom',
 	},
 	{
-		icon: faLinkedin,
+		icon: createAnimatedIconComponent(FaLinkedin),
 		label: 'LinkedIn',
 		link: 'https://www.linkedin.com/in/jjaramillom',
 	},
-	{icon: faEnvelopeSquare, label: 'Send me an email', link: 'mailto:jjaramillom@unal.edu.co'},
-	{icon: faIdCard, label: 'Download my CV', link: resume},
+	{
+		icon: createAnimatedIconComponent(FaEnvelopeSquare),
+		label: 'Send me an email',
+		link: 'mailto:jjaramillom@unal.edu.co',
+	},
+	{icon: createAnimatedIconComponent(FaIdCard), label: 'Download my CV', link: resume},
 ];
 
 const IndexPage = ({uri}: PageProps) => {
 	const siteMetadata = useStaticQuery<GatsbyTypes.Query>(query).site?.siteMetadata;
+	const [name, lastName] = (siteMetadata?.author as string).split(' ');
 
 	return (
 		<Layout uri={uri}>
+			<Seo title="Home" />
 			<Container className="mt-3">
 				<Title className={classes.title}>
-					<span>{siteMetadata?.author?.name}</span> <span>{siteMetadata?.author?.lastName}</span>
+					<span>{name}</span> <span>{lastName}</span>
 				</Title>
 				<Typewriter />
 				<hr className="my-3 w-100" />
@@ -77,7 +99,7 @@ const IndexPage = ({uri}: PageProps) => {
 					{CONTACT_ICONS.map(({icon, link, label}) => (
 						<div key={link} className={classes.icon_wrapper}>
 							<a href={link} target="_blank" rel="noopener noreferrer" download={label === 'Download my CV'}>
-								<FontAwesomeIcon aria-hidden className={`${classes.icon} ${classes.animated}`} icon={icon} />
+								{icon}
 							</a>
 							<div className={`mt-1 ${classes.tooltip}`}>{`${label}`}</div>
 						</div>
@@ -87,11 +109,7 @@ const IndexPage = ({uri}: PageProps) => {
 				<div className={classes.tech_grid}>
 					{TECH_ICONS.map(({icon, label}) => (
 						<div key={label} className={`${classes.icon_wrapper} ${classes.tech}`}>
-							<FontAwesomeIcon
-								aria-hidden
-								className={`${classes.icon} ${classes.tech} ${classes.animated}`}
-								icon={icon}
-							/>
+							{icon}
 							<div className={`mt-1 ${classes.tooltip}`}>{`${label}`}</div>
 						</div>
 					))}
@@ -107,10 +125,7 @@ const query = graphql`
 	query {
 		site {
 			siteMetadata {
-				author {
-					name
-					lastName
-				}
+				author
 			}
 		}
 	}

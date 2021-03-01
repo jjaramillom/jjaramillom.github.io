@@ -14,8 +14,7 @@ const Header = ({currentRoute}: Props) => {
 		{to: '/', label: 'home'},
 		{to: '/about', label: 'about'},
 		{to: '/resume', label: 'resume'},
-		// {to: '/projects', label: 'projects'},
-		{to: '/blog', label: 'blog'},
+		// {to: '/blog', label: 'blog'},
 	];
 
 	return (

@@ -20,7 +20,7 @@ const TypeWriter = () => {
 				}`}
 			>
 				<p>
-					Electronic Engineer by title,<div className="d-none d-sm-none d-md-inline-block">&nbsp;</div>
+					Electronic Engineer by title,<span className="d-none d-sm-none d-md-inline-block">&nbsp;</span>
 				</p>
 			</div>
 			<div

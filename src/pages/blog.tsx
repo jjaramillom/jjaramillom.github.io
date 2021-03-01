@@ -4,8 +4,8 @@ import Container from 'react-bootstrap/Container';
 
 import Seo from 'components/Seo/Seo';
 import Layout from 'components/Layout/Layout';
-import Title from 'components/Title/Title';
 import BlogCard from 'components/BlogCard/BlogCard';
+import Title from 'components/Title/Title';
 
 const BlogPage = ({uri, data}: PageProps<GatsbyTypes.Query>) => {
 	return (

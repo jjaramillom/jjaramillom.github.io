@@ -4,7 +4,7 @@ import {Helmet} from 'react-helmet';
 
 type Props = {
 	description?: string;
-	keywords?: string;
+	keywords?: string[];
 	title?: string;
 	url?: string;
 	author?: string;

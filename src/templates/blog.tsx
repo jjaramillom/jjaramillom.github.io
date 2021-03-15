@@ -1,7 +1,9 @@
 import React from 'react';
 import {graphql, PageProps} from 'gatsby';
 import Container from 'react-bootstrap/Container';
+
 import Layout from 'components/Layout/Layout';
+import Seo from 'components/Seo/Seo';
 import Title from 'components/Title/Title';
 
 export default ({data, uri}: PageProps<GatsbyTypes.Query>) => {
@@ -9,9 +11,11 @@ export default ({data, uri}: PageProps<GatsbyTypes.Query>) => {
 
 	return (
 		<Layout uri={uri}>
+			<Seo title={postData.frontmatter?.title} keywords={postData.frontmatter?.tags as string[]} />
+
 			<Container className="text-center mt-3" fluid>
 				<Container className="text-justify">
-				<Title>{postData.frontmatter?.title}</Title>
+					<Title>{postData.frontmatter?.title}</Title>
 					<div dangerouslySetInnerHTML={{__html: postData.html ?? ''}} />
 				</Container>
 			</Container>

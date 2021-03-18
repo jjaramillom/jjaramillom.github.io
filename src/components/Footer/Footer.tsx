@@ -1,7 +1,7 @@
 import React from 'react';
 import {graphql, useStaticQuery} from 'gatsby';
 
-import classes from './Footer.module.scss';
+import * as classes from './Footer.module.scss';
 
 const Footer = () => {
 	const metaData = useStaticQuery<GatsbyTypes.Query>(query).site?.siteMetadata;

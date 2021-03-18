@@ -9,6 +9,9 @@ module.exports = {
 	siteMetadata: {
 		title: 'personal-site',
 		description: 'A colombian software developer living in Munich, Germany.',
+		url: 'https://github.com/jjaramillom',
+		siteUrl: `https://github.com/jjaramillom`,
+		twitterUsername:'@jacobo119',
 		author: 'Jacobo Jaramillo',
 		keywords: [
 			'jacobo',
@@ -79,6 +82,7 @@ module.exports = {
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sass`,
 		`gatsby-plugin-page-transitions`,
+		`gatsby-plugin-sitemap`,
 		{
 			resolve: `gatsby-plugin-google-fonts`,
 			options: {

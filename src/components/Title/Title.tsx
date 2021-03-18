@@ -1,6 +1,6 @@
 import React from 'react';
 
-import classes from './Title.module.scss';
+import * as classes from './Title.module.scss';
 
 type Props = {
 	style?: React.CSSProperties;

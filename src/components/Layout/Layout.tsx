@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import PageTransition from 'gatsby-plugin-page-transitions';
 
 import Navbar from '@components/Navbar/Navbar';
-import classes from './Layout.module.scss';
+import * as classes from './Layout.module.scss';
 import Footer from 'components/Footer/Footer';
 type Props = {uri: string; style?: React.CSSProperties};
 

@@ -1,6 +1,6 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 
-import classes from './TypeWriter.module.scss';
+import * as classes from './TypeWriter.module.scss';
 
 const START_DELAY = 500;
 

@@ -3,7 +3,7 @@ import Img, {FluidObject} from 'gatsby-image';
 import Container from 'react-bootstrap/Container';
 
 import Card from 'components/Card/Card';
-import classes from './EducationCard.module.scss';
+import * as classes from './EducationCard.module.scss';
 
 export type Education = {
 	university: string;

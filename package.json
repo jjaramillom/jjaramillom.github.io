@@ -17,24 +17,25 @@
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
     "bootstrap": "^4.6.0",
-    "gatsby": "^2.26.1",
-    "gatsby-image": "^2.11.0",
+    "gatsby": "^3.1.1",
+    "gatsby-image": "^3.1.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-page-transitions": "^1.0.8",
-    "gatsby-plugin-sass": "^3.2.0",
-    "gatsby-plugin-sharp": "^2.14.1",
+    "gatsby-plugin-sass": "^4.1.0",
+    "gatsby-plugin-sharp": "^3.1.1",
+    "gatsby-plugin-sitemap": "^3.1.0",
     "gatsby-plugin-transition-link": "^1.20.5",
     "gatsby-plugin-typegen": "^2.2.4",
-    "gatsby-remark-images": "^3.11.0",
+    "gatsby-remark-images": "^4.1.0",
     "gatsby-remark-relative-images": "^2.0.2",
-    "gatsby-source-filesystem": "^2.11.0",
-    "gatsby-transformer-remark": "^2.16.0",
-    "gatsby-transformer-sharp": "^2.12.0",
+    "gatsby-source-filesystem": "^3.1.0",
+    "gatsby-transformer-remark": "^3.1.0",
+    "gatsby-transformer-sharp": "^3.1.0",
     "lodash": "^4.17.21",
     "node-sass": "^5.0.0",
-    "react": "^16.12.0",
+    "react": "^17.0.1",
     "react-bootstrap": "^1.5.0",
-    "react-dom": "^16.12.0",
+    "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
@@ -56,5 +57,9 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "engines": {
+    "npm":"use-yarn-instead",
+    "yarn":">=1.22.0"
   }
 }

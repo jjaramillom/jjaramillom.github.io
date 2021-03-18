@@ -26,7 +26,7 @@ import Layout from 'components/Layout/Layout';
 import Typewriter from 'components/Typewriter/Typewriter';
 import Title from 'components/Title/Title';
 import resume from '../../static/resume.pdf';
-import classes from './index.module.scss';
+import * as classes from './index.module.scss';
 import {IconType} from '@react-icons/all-files';
 
 type ContactIconConfig = {

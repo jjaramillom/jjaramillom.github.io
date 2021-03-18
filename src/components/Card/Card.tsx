@@ -1,6 +1,6 @@
 import React from 'react';
 
-import classes from './Card.module.scss';
+import * as classes from './Card.module.scss';
 
 type Props = {
 	style?: React.CSSProperties;

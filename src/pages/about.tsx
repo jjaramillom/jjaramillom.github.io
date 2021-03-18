@@ -5,7 +5,7 @@ import Image from 'react-bootstrap/Image';
 
 import Layout from 'components/Layout/Layout';
 import Seo from 'components/Seo/Seo';
-import classes from './about.module.scss';
+import * as classes from './about.module.scss';
 
 const mapBookToElement = ({author, link, title}: GatsbyTypes.SiteSiteMetadataBooksList) => (
 	<li key={title}>

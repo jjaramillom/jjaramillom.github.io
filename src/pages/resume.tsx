@@ -8,7 +8,7 @@ import Layout from 'components/Layout/Layout';
 import EducationCard, {Education} from 'components/EducationCard/EducationCard';
 import JobCard, {Job} from 'components/JobCard/JobCard';
 import Title from 'components/Title/Title';
-import classes from './resume.module.scss';
+import * as classes from './resume.module.scss';
 
 const mapEducationData = ({
 	university,

@@ -3,7 +3,7 @@ import React from 'react';
 import {Link} from 'gatsby';
 
 import Card from 'components/Card/Card';
-import classes from './BlogCard.module.scss';
+import * as classes from './BlogCard.module.scss';
 
 type Props = {
 	blogPath: string;

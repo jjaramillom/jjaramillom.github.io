@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Badge from 'react-bootstrap/Badge';
 
 import Card from 'components/Card/Card';
-import classes from './JobCard.module.scss';
+import * as classes from './JobCard.module.scss';
 
 export type Job = {
 	company: string;

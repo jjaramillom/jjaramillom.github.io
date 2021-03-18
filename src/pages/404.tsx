@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 
 import Layout from 'components/Layout/Layout';
 import Title from 'components/Title/Title';
-import classes from './404.module.scss';
+import * as classes from './404.module.scss';
 
 const BlogPage = () => {
 	return (

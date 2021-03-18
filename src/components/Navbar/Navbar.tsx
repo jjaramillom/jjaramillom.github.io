@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {Link} from 'gatsby';
 
-import classes from './Navbar.module.scss';
+import * as classes from './Navbar.module.scss';
 
 type Props = {
 	currentRoute: string;

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from 'react-helmet';
 import {graphql, useStaticQuery, PageProps} from 'gatsby';
 import Container from 'react-bootstrap/Container';
 import {FaEnvelopeSquare} from '@react-icons/all-files/fa/FaEnvelopeSquare';
@@ -88,6 +89,9 @@ const IndexPage = ({uri}: PageProps) => {
 
 	return (
 		<Layout uri={uri}>
+			<Helmet>
+				<meta name="google-site-verification" content="T5Pi7R7GuyzgnmlYenOkLVbQZ3Hn-p4gfzkteQ0S69k" />
+			</Helmet>
 			<Seo title="Home" />
 			<Container className="mt-3">
 				<Title className={classes.title}>

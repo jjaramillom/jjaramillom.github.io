@@ -18,7 +18,6 @@ const Seo = ({description, title, keywords, url, author}: Props) => {
 		<Helmet
 			htmlAttributes={{lang: 'en'}}
 			title={title || site?.siteMetadata?.title}
-			titleTemplate={`%s | ${site?.siteMetadata?.title}`}
 			meta={[
 				{name: `description`, content: metaDescription},
 				{name: `keywords`, content: metaKeyWords},

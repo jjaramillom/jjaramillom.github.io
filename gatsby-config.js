@@ -29,9 +29,9 @@ module.exports = {
 		designations: ['TypeScript lover', 'Your fullstack guy', 'Avid learner', 'Gamer', 'Tennis player'],
 		booksList: [
 			{
-				title: `Genghis Khan and the Making of the Modern World`,
-				author: `Jack Weatherford`,
-				link: `https://www.goodreads.com/book/show/40718726-genghis-khan-and-the-making-of-the-modern-world`,
+				title: `The Analyst`,
+				author: `John Katzenbach`,
+				link: `https://www.goodreads.com/el/book/show/67931.The_Analyst`,
 			},
 			{
 				title: `1984`,
@@ -39,9 +39,9 @@ module.exports = {
 				link: `https://www.goodreads.com/book/show/40961427-1984?ac=1&from_search=true&qid=zbxFQfErFq&rank=1`,
 			},
 			{
-				title: `Zero to One`,
-				author: `Peter Thiel, Blake Masters`,
-				link: `https://www.goodreads.com/book/show/18050143-zero-to-one`,
+				title: `Blindness`,
+				author: `José Saramago`,
+				link: `https://www.goodreads.com/book/show/40495148-blindness`,
 			},
 		],
 		moviesList: [

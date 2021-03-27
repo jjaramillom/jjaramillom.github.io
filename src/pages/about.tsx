@@ -56,7 +56,10 @@ const BlogPage = ({uri}: PageProps) => {
 		<Layout uri={uri}>
 			<Seo title="About Me" />
 			<Container className="d-flex flex-column align-items-center">
-				<Image className={classes.image} roundedCircle src={`/pictures/profile.png`} alt="" />
+				<div className={classes.image_container}>
+					<Image className={classes.image} roundedCircle src={`/pictures/profile.png`} alt="" />
+					<div className={classes.border} />
+				</div>
 				<article className="pt-2 text-justify">
 					<div className={classes.designations}>
 						{designations?.map((d, i) => (

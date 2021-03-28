@@ -17,6 +17,7 @@ import {SiHtml5} from '@react-icons/all-files/si/SiHtml5';
 import {SiRedux} from '@react-icons/all-files/si/SiRedux';
 import {SiPython} from '@react-icons/all-files/si/SiPython';
 import {SiFlask} from '@react-icons/all-files/si/SiFlask';
+import {SiJest} from '@react-icons/all-files/si/SiJest';
 import {SiMongodb} from '@react-icons/all-files/si/SiMongodb';
 import {GrMysql} from '@react-icons/all-files/gr/GrMysql';
 import {FaGit} from '@react-icons/all-files/fa/FaGit';
@@ -53,6 +54,7 @@ const TECH_ICONS: TechIconConfig[] = [
 	{icon: createTechIconComponent(SiNodeDotJs), label: 'Node.js'},
 	{icon: createTechIconComponent(FaVuejs), label: 'Vue.js'},
 	{icon: createTechIconComponent(SiGraphql), label: 'GraphQL'},
+	{icon: createTechIconComponent(SiJest), label: 'Jest'},
 	{icon: createTechIconComponent(SiCss3), label: 'CSS'},
 	{icon: createTechIconComponent(SiHtml5), label: 'HTML'},
 	{icon: createTechIconComponent(SiRedux), label: 'Redux'},

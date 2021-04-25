@@ -1,7 +1,8 @@
 @import './_colors';
+@import './typography';
 
 html {
-	font-family: poppins;
+	font-family: 'Poppins';
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
@@ -618,7 +619,7 @@ pre tt:after {
 /* CUSTOM */
 
 * {
-	font-family: poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+	font-family: 'Poppins', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
 		Droid Sans, Helvetica Neue, sans-serif;
 	&:not(path):not(a) {
 		color: $main-med;

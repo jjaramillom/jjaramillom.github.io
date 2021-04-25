@@ -1,4 +1,4 @@
-@import '/src/styles/_colors';
+@import '/src/styles/mixins/colors';
 
 $nav-height: 75px;
 
@@ -16,7 +16,7 @@ $nav-height: 75px;
 	padding: 0.5rem 2rem 0.5rem 1rem;
 }
 
-.nav_item {
+.navItem {
 	color: $main-med !important;
 	text-transform: capitalize;
 	&:hover {
@@ -32,7 +32,7 @@ $nav-height: 75px;
 }
 
 @media only screen and (max-width: 575px) {
-	.navbar_collapse {
+	.navbarCollapse {
 		position: absolute;
 		top: $nav-height;
 		background: rgba($main-background, 0.8);

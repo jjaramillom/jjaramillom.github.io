@@ -1,4 +1,4 @@
-@import '/src/styles/_colors';
+@import '/src/styles/mixins/colors';
 
 .image {
 	margin: auto;
@@ -6,7 +6,7 @@
 	max-height: 15vmax;
 }
 
-.text_container {
+.textContainer {
 	text-align: center;
 }
 
@@ -22,4 +22,8 @@
 .card {
 	width: 100%;
 	height: fit-content;
+}
+
+.badgesContainer {
+	width: 100%;
 }

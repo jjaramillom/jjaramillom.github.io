@@ -27,7 +27,7 @@ const CompanyCard = ({job: {company, location, position, startDate, endDate, lin
 	return (
 		<Container fluid>
 			<Img fluid={image} className={classes.image} />
-			<div className={`${classes.text_container} mt-4`}>
+			<div className={`${classes.textContainer} mt-4`}>
 				<h4 className="mb-1">
 					<a href={link} target="_blank" rel="noopener noreferrer">
 						{company}
@@ -60,7 +60,7 @@ const JobCard = ({jobData, image, tags, html}: Props) => {
 					</Col>
 					<Col className="col-md-8 col-12">
 						<p className="mt-2" dangerouslySetInnerHTML={{__html: html}} />
-						<div className="d-inline-flex flex-wrap justify-content-center">
+						<div className={`d-inline-flex flex-wrap justify-content-center ${classes.badgesContainer}`}>
 							{tags.map(tag => (
 								<Badge key={tag} pill className={`mr-2 my-1 py-2 px-3 ${classes.badge}`}>
 									{tag}

@@ -1,4 +1,4 @@
-@import '/src/styles/_colors';
+@import '/src/styles/mixins/colors';
 
 .title {
 	& span:first-child {
@@ -10,13 +10,7 @@
 	}
 }
 
-.sub_title {
-	font-size: 2rem;
-	text-align: center;
-	font-weight: normal;
-}
-
-.icon_wrapper {
+.iconWrapper {
 	margin: 0 1rem;
 	position: relative;
 	display: flex;
@@ -58,13 +52,13 @@
 	}
 }
 
-.tech_title {
+.techTitle {
 	text-align: center;
 	color: #717f79;
 	font-weight: 400;
 }
 
-.tech_grid {
+.techGrid {
 	position: relative;
 	display: flex;
 	justify-content: center;

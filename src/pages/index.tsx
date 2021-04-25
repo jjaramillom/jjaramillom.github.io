@@ -103,7 +103,7 @@ const IndexPage = ({uri}: PageProps) => {
 				<hr className="my-3 w-100" />
 				<div className="d-flex flex-row justify-content-center my-5">
 					{CONTACT_ICONS.map(({icon, link, label}) => (
-						<div key={link} className={classes.icon_wrapper}>
+						<div key={link} className={classes.iconWrapper}>
 							<a href={link} target="_blank" rel="noopener noreferrer" download={label === 'Download my CV'}>
 								{icon}
 							</a>
@@ -111,10 +111,10 @@ const IndexPage = ({uri}: PageProps) => {
 						</div>
 					))}
 				</div>
-				<h3 className={classes.tech_title}>These are some of the technologies I have worked with</h3>
-				<div className={classes.tech_grid}>
+				<h3 className={classes.techTitle}>These are some of the technologies I have worked with</h3>
+				<div className={classes.techGrid}>
 					{TECH_ICONS.map(({icon, label}) => (
-						<div key={label} className={`${classes.icon_wrapper} ${classes.tech}`}>
+						<div key={label} className={`${classes.iconWrapper} ${classes.tech}`}>
 							{icon}
 							<div className={`mt-1 ${classes.tooltip}`}>{`${label}`}</div>
 						</div>

@@ -69,7 +69,7 @@ const ResumePage = ({uri, data}: PageProps) => {
 				</Container>
 				<Title className="mt-5">Work Experience</Title>
 				<Container
-					className={`d-flex flex-column justify-content-center align-items-center ${classes.jobs_container}`}
+					className={`d-flex flex-column justify-content-center align-items-center ${classes.jobsContainer}`}
 					fluid
 				>
 					{workData.edges.map(({node}) => (

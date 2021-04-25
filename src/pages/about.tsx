@@ -56,7 +56,7 @@ const BlogPage = ({uri}: PageProps) => {
 		<Layout uri={uri}>
 			<Seo title="About Me" />
 			<Container className="d-flex flex-column align-items-center">
-				<div className={classes.image_container}>
+				<div className={classes.imageContainer}>
 					<Image className={classes.image} roundedCircle src={`/pictures/profile.png`} alt="" />
 					<div className={classes.border} />
 				</div>
@@ -97,7 +97,7 @@ const BlogPage = ({uri}: PageProps) => {
 					</p>
 					<div className="d-flex flex-column flex-xl-row flex-wrap">
 						{extraInformation.map(el => (
-							<div key={el.title} className={classes.favorite_list}>
+							<div key={el.title} className={classes.favoritesList}>
 								<p className="font-weight-bolder mb-2">{el.title}</p>
 								<ul className={classes.list}>{el.elements}</ul>
 							</div>

@@ -1,4 +1,4 @@
-@import '/src/styles/_colors';
+@import '/src/styles/mixins/colors';
 
 .image {
 	margin: auto;
@@ -9,7 +9,7 @@
 	}
 }
 
-.text_container {
+.textContainer {
 	text-align: center;
 }
 

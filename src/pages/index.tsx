@@ -10,7 +10,7 @@ import {SiJavascript} from '@react-icons/all-files/si/SiJavascript';
 import {SiTypescript} from '@react-icons/all-files/si/SiTypescript';
 import {SiReact} from '@react-icons/all-files/si/SiReact';
 import {SiNodeDotJs} from '@react-icons/all-files/si/SiNodeDotJs';
-import {FaVuejs} from '@react-icons/all-files/Fa/FaVuejs';
+import {FaVuejs} from '@react-icons/all-files/fa/FaVuejs';
 import {SiGraphql} from '@react-icons/all-files/si/SiGraphql';
 import {SiCss3} from '@react-icons/all-files/si/SiCss3';
 import {SiHtml5} from '@react-icons/all-files/si/SiHtml5';
@@ -25,7 +25,7 @@ import {SiDocker} from '@react-icons/all-files/si/SiDocker';
 
 import Seo from 'components/Seo/Seo';
 import Layout from 'components/Layout/Layout';
-import Typewriter from 'components/Typewriter/Typewriter';
+import Typewriter from 'components/TypeWriter/TypeWriter';
 import Title from 'components/Title/Title';
 import resume from '../../static/resume.pdf';
 import * as classes from './index.module.scss';

@@ -1,10 +1,10 @@
 ---
 company: "Device Insight"
-location: "Munich, Germany"
-position: "Software Engineer"
+location: "Manizales, Colombia"
+position: "Freelance Software Engineer"
 tags: ["TypeScript", "Vue.js", "React.js", "Node.js", "GraphQL", "Jest", "Docker"]
-startDate: "2020-09-01"
-endDate: "2021-07-31"
+startDate: "2021-08-01"
+endDate: "2031-12-31"
 link: "https://device-insight.com/en"
 ---
 

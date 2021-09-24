@@ -74,17 +74,17 @@ const BlogPage = ({uri}: PageProps) => {
 						))}
 					</div>
 					<p className="mt-4 pt-2">
-						Hello there! My name is <b>{author}</b>, an Electronic Engineer turned Software Developer. I have been in
-						Germany since 2017, when I came to study a MSc. in Electrical Engineering and IT. For the last 3 years I
-						have been working in software development in the areas of IoT, Machine Learning, and Telecommunications. I
-						consider myself to be a disciplined and resilient person, always keen to learn and open to get involved in
-						different areas.
+						Hello there! My name is <b>{author}</b>, an Electronic Engineer turned Software Developer. I went to Germany
+						in 2017 to study a MSc. in Electrical Engineering and IT, and stayed until 2021, when I came back to my home
+						country, Colombia. For the last 3 years I have been working in software development in the areas of IoT,
+						Machine Learning, and Telecommunications. I consider myself to be a disciplined and resilient person, always
+						keen to learn and open to get involved in different areas.
 					</p>
-					<p className="">
+					<p>
 						In my leisure time, I'm usually riding my bike, chilling with friends (before Covid-19 at least), playing
 						some video-games, and of course, hitting the keyboard.
 					</p>
-					<p className="">
+					<p>
 						One of my other passions is to learn new stuff (I know, it sounds cliché). I'm usually learning something,
 						be it tech-related, or something random such as Mongol history (I love history, BTW).
 					</p>

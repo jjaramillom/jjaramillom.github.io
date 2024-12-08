@@ -1,0 +1,33 @@
+.typewriter {
+  @apply m-auto w-fit;
+  & p {
+    @apply m-0 overflow-hidden whitespace-nowrap;
+    letter-spacing: 0.1em;
+  }
+
+  &.active p {
+    @apply border-r-[0.15em] border-solid border-orange;
+    animation:
+      typing 3s steps(40, end),
+      blink-caret 1s step-end infinite;
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 1%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    @apply border-orange;
+  }
+}

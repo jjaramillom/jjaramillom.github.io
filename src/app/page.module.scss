@@ -1,0 +1,31 @@
+.iconWrapper {
+  @apply relative mx-4 mt-0 flex items-center;
+  &:hover .tooltip {
+    @apply block;
+  }
+
+  &.tech {
+    @apply mb-10;
+  }
+}
+
+.tooltip {
+  @apply absolute -bottom-7 left-1/2 hidden -translate-x-1/2 whitespace-nowrap text-orange;
+}
+
+.icon {
+  @apply relative top-0 overflow-hidden text-4xl text-main-med hover:text-orange;
+
+  font-size: 3.75rem;
+  transition: top 0.5s;
+  &.animated:hover {
+    top: -10px;
+  }
+  &.tech {
+    font-size: 3rem;
+  }
+}
+
+.techTitle {
+  @apply text-center font-semibold text-main-dark;
+}

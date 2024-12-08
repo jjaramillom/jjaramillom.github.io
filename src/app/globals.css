@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  height: 100vh;
+}
+
+*,
+*::after,
+*::before {
+  @apply box-border;
+}
+
+body {
+  @apply bg-main-bg text-main-med;
+}
+
+a {
+  @apply text-orange hover:text-orange-dark;
+}

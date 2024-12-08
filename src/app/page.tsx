@@ -81,7 +81,7 @@ const CONTACT_ICONS: ContactIconConfig[] = [
   {
     icon: createAnimatedIconComponent(FaEnvelopeSquare),
     label: 'Send me an email',
-    link: 'mailto:jjaramillom@unal.edu.co',
+    link: 'mailto:jacobo.jaramillo.dev@gmail.com',
   },
   {
     icon: createAnimatedIconComponent(FaIdCard),

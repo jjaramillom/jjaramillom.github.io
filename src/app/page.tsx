@@ -86,7 +86,7 @@ const CONTACT_ICONS: ContactIconConfig[] = [
   {
     icon: createAnimatedIconComponent(FaIdCard),
     label: 'Download my CV',
-    link: '/files/JJ_CV.pdf',
+    link: '/JJ_CV.pdf',
   },
 ];
 

@@ -1,7 +1,10 @@
 import type { NextConfig } from 'next';
 
+const isProd = process.env.NODE_ENV === 'production';
 const nextConfig: NextConfig = {
-  /* config options here */
+  reactStrictMode: true,
+  assetPrefix: isProd ? '/jjaramillom.github.io/' : '',
+  basePath: isProd ? '/jjaramillom.github.io' : '',
   output: 'export',
 };
 

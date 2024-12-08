@@ -1,0 +1,19 @@
+.picture-border {
+  @apply border-[3px] border-dashed border-orange;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: stroke-draw 30s linear infinite;
+}
+
+@keyframes stroke-draw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

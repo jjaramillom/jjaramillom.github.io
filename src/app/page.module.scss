@@ -3,7 +3,10 @@
   &:hover .tooltip {
     @apply block;
   }
-
+  &:hover .icon.animated {
+    @apply text-orange;
+    top: -10px;
+  }
   &.tech {
     @apply mb-10;
   }
@@ -18,9 +21,7 @@
 
   font-size: 3.75rem;
   transition: top 0.5s;
-  &.animated:hover {
-    top: -10px;
-  }
+
   &.tech {
     font-size: 3rem;
   }

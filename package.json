@@ -14,8 +14,10 @@
     "deploy": "gh-pages -d out"
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "husky": "^9.1.7",
     "next": "15.0.4",
+    "next-intl": "^3.26.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.4.0"

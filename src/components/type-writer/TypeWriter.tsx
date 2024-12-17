@@ -1,12 +1,14 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 import styles from './TypeWriter.module.scss';
 
 const START_DELAY = 500;
 
 export const TypeWriter = () => {
+  const t = useTranslations('home');
   const [firstDelayedTypeWriterClass, setFirstDelayedTypewritterClass] =
     useState('');
   const [secondDelayedTypewritterClass, setSecondDelayedTypewritterClass] =
@@ -41,7 +43,7 @@ export const TypeWriter = () => {
         }}
       >
         <p>
-          Electronic Engineer by title,
+          {t('type_writer.first')}
           <span className='inline-block'>&nbsp;</span>
         </p>
       </div>
@@ -49,7 +51,7 @@ export const TypeWriter = () => {
         className={`inline-block ${styles.typewriter} ${secondDelayedTypewritterClass}`}
         style={{ opacity: secondDelayedTypewritterClass === '' ? 0 : 1 }}
       >
-        <p>Software Engineer by heart</p>
+        <p>{t('type_writer.second')}</p>
       </div>
     </div>
   );

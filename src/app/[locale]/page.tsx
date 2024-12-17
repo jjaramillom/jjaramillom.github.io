@@ -1,5 +1,6 @@
-import { ReactNode } from 'react';
-import { Title, TypeWriter } from '@/components';
+import { ReactNode, use } from 'react';
+import { useTranslations } from 'next-intl';
+import { setRequestLocale } from 'next-intl/server';
 import { IconType } from 'react-icons';
 import {
   FaEnvelopeSquare,
@@ -27,6 +28,7 @@ import {
 } from 'react-icons/si';
 import { TbBrandAzure } from 'react-icons/tb';
 
+import { Title, TypeWriter } from '@/components';
 import styles from './page.module.scss';
 
 interface ContactIconConfig {
@@ -67,30 +69,39 @@ const TECH_ICONS: TechIconConfig[] = [
   { icon: createTechIconComponent(SiDocker), label: 'Docker' },
 ];
 
-const CONTACT_ICONS: ContactIconConfig[] = [
-  {
-    icon: createAnimatedIconComponent(FaGithubSquare),
-    label: 'Github',
-    link: 'https://www.github.com/jjaramillom',
-  },
-  {
-    icon: createAnimatedIconComponent(FaLinkedin),
-    label: 'LinkedIn',
-    link: 'https://www.linkedin.com/in/jjaramillom',
-  },
-  {
-    icon: createAnimatedIconComponent(FaEnvelopeSquare),
-    label: 'Send me an email',
-    link: 'mailto:jacobo.jaramillo.dev@gmail.com',
-  },
-  {
-    icon: createAnimatedIconComponent(FaIdCard),
-    label: 'Download my CV',
-    link: '/JJ_CV.pdf',
-  },
-];
+type Props = {
+  params: Promise<{ locale: string }>;
+};
 
-export default function Home() {
+export default function IndexPage({ params }: Props) {
+  const { locale } = use(params);
+  // Enable static rendering
+  setRequestLocale(locale);
+  const t = useTranslations('home');
+
+  const CONTACT_ICONS: ContactIconConfig[] = [
+    {
+      icon: createAnimatedIconComponent(FaGithubSquare),
+      label: 'Github',
+      link: 'https://www.github.com/jjaramillom',
+    },
+    {
+      icon: createAnimatedIconComponent(FaLinkedin),
+      label: 'LinkedIn',
+      link: 'https://www.linkedin.com/in/jjaramillom',
+    },
+    {
+      icon: createAnimatedIconComponent(FaEnvelopeSquare),
+      label: t('send_email'),
+      link: 'mailto:jacobo.jaramillo.dev@gmail.com',
+    },
+    {
+      icon: createAnimatedIconComponent(FaIdCard),
+      label: t('download_cv'),
+      link: '/JJ_CV.pdf',
+    },
+  ];
+
   return (
     <div>
       <Title className='mb-8'>
@@ -99,7 +110,7 @@ export default function Home() {
       </Title>
       <TypeWriter />
       <hr className='my-3 w-100' />
-      <div className='flex flex-row justify-center mt-5 mb-6'>
+      <div className='flex flex-row justify-center mt-8 mb-10'>
         {CONTACT_ICONS.map(({ icon, link, label }) => (
           <div key={link} className={styles.iconWrapper}>
             <a
@@ -115,7 +126,7 @@ export default function Home() {
         ))}
       </div>
       <h3 className='text-center text-main-dark text-2xl mb-4 font-light'>
-        These are some of the technologies I have worked with
+        {t('techs')}
       </h3>
       <div className='relative mx-auto flex max-w-[750px] flex-wrap justify-center'>
         {TECH_ICONS.map(({ icon, label }) => (

@@ -56,10 +56,3 @@ export const musicList = [
     link: 'https://youtu.be/BNMKGYiJpvg',
   },
 ];
-
-export const designations = [
-  'TypeScript lover',
-  'Your fullstack guy',
-  'Avid learner',
-  'Tennis player',
-];

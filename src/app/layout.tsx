@@ -1,15 +1,6 @@
 import { Metadata, Viewport } from 'next';
-import { Poppins } from 'next/font/google';
 
 import './globals.css';
-
-import { Footer, NavBar } from '@/components';
-
-const poppins = Poppins({
-  weight: ['300', '400', '500', '600', '700'],
-  subsets: ['latin'],
-  display: 'swap',
-});
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -41,17 +32,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang='en'>
-      <body
-        className={`${poppins.className} antialiased flex flex-col h-full relative`}
-      >
-        <NavBar />
-        <div className='mb-5 mt-12 px-4 sm:px-12 flex-1 max-w-[900px] mx-auto'>
-          {children}
-        </div>
-        <Footer />
-      </body>
-    </html>
-  );
+  return children;
 }

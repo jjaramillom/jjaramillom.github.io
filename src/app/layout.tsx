@@ -2,6 +2,8 @@ import { Metadata, Viewport } from 'next';
 
 import './globals.css';
 
+import { TECH_ICONS } from './[locale]/consts';
+
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1.0,
@@ -24,6 +26,7 @@ export const metadata: Metadata = {
     'react',
     'germany',
     'colombia',
+    ...TECH_ICONS.map(({ label }) => label),
   ],
 };
 

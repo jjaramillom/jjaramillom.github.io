@@ -8,27 +8,9 @@ import {
   FaIdCard,
   FaLinkedin,
 } from 'react-icons/fa';
-import {
-  SiDocker,
-  SiExpress,
-  SiFlask,
-  SiGit,
-  SiGraphql,
-  SiJavascript,
-  SiJest,
-  SiMongodb,
-  SiNextdotjs,
-  SiNodedotjs,
-  SiPostgresql,
-  SiPython,
-  SiReact,
-  SiRedux,
-  SiTypescript,
-  SiVuedotjs,
-} from 'react-icons/si';
-import { TbBrandAzure } from 'react-icons/tb';
 
 import { Title, TypeWriter } from '@/components';
+import { TECH_ICONS } from './consts';
 import styles from './page.module.scss';
 
 interface ContactIconConfig {
@@ -37,37 +19,9 @@ interface ContactIconConfig {
   label: string;
 }
 
-interface TechIconConfig {
-  icon: ReactNode;
-  label: string;
-}
-
-const createTechIconComponent = (Icon: IconType): ReactNode => (
-  <Icon className={`${styles.icon} ${styles.tech}`} />
-);
 const createAnimatedIconComponent = (Icon: IconType): ReactNode => (
   <Icon className={`${styles.icon} ${styles.animated}`} />
 );
-
-const TECH_ICONS: TechIconConfig[] = [
-  { icon: createTechIconComponent(SiJavascript), label: 'JavaScript' },
-  { icon: createTechIconComponent(SiTypescript), label: 'Typescript' },
-  { icon: createTechIconComponent(SiReact), label: 'React.js' },
-  { icon: createTechIconComponent(SiNodedotjs), label: 'Node.js' },
-  { icon: createTechIconComponent(SiVuedotjs), label: 'Vue.js' },
-  { icon: createTechIconComponent(SiGraphql), label: 'GraphQL' },
-  { icon: createTechIconComponent(SiExpress), label: 'Express.js' },
-  { icon: createTechIconComponent(SiNextdotjs), label: 'Next.js' },
-  { icon: createTechIconComponent(SiJest), label: 'Jest' },
-  { icon: createTechIconComponent(SiRedux), label: 'Redux' },
-  { icon: createTechIconComponent(SiPython), label: 'Python' },
-  { icon: createTechIconComponent(SiFlask), label: 'Flask' },
-  { icon: createTechIconComponent(SiMongodb), label: 'MongoDB' },
-  { icon: createTechIconComponent(SiPostgresql), label: 'PostgreSQL' },
-  { icon: createTechIconComponent(SiGit), label: 'Git' },
-  { icon: createTechIconComponent(TbBrandAzure), label: 'Azure' },
-  { icon: createTechIconComponent(SiDocker), label: 'Docker' },
-];
 
 type Props = {
   params: Promise<{ locale: string }>;

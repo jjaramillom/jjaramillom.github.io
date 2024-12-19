@@ -3,7 +3,7 @@
 import { ComponentProps, useTransition } from 'react';
 import { clsx } from 'clsx';
 import { useLocale, useTranslations } from 'next-intl';
-import { notFound, useParams, useSelectedLayoutSegment } from 'next/navigation';
+import { useParams, useSelectedLayoutSegment } from 'next/navigation';
 
 import { Link, routing, usePathname, useRouter } from '@/i18n/routing';
 
@@ -22,7 +22,6 @@ export const NavBar = () => {
 
   function onSelectChange(_locale: string) {
     if (_locale === locale) return;
-    console.log('setting', _locale);
     startTransition(() => {
       router.replace(
         // @ts-expect-error -- TypeScript will validate that only known `params`
@@ -32,14 +31,6 @@ export const NavBar = () => {
         { locale: _locale }
       );
     });
-  }
-
-  // console.log('path', pathname);
-  // console.log('locale', locale);
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  if (!routing.locales.includes(locale as any)) {
-    return notFound();
   }
 
   return (
